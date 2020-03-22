@@ -1,0 +1,105 @@
+.. zisoftdocs documentation master file, created by
+   sphinx-quickstart on Thu Mar 19 07:25:26 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to zisoft_docs's documentation!
+======================================
+
+.. _ansible_documentation:
+
+Zisoft Awareness Documentation
+=====================
+
+About Ansible
+`````````````
+
+Ansible is an IT automation tool.  It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.
+
+Ansible's main goals are simplicity and ease-of-use. It also has a strong focus on security and reliability, featuring a minimum of moving parts, usage of OpenSSH for transport (with other transports and pull modes as alternatives), and a language that is designed around auditability by humans--even those not familiar with the program.
+
+We believe simplicity is relevant to all sizes of environments, so we design for busy users of all types: developers, sysadmins, release engineers, IT managers, and everyone in between. Ansible is appropriate for managing all environments, from small setups with a handful of instances to enterprise environments with many thousands of instances.
+
+Ansible manages machines in an agent-less manner. There is never a question of how to
+upgrade remote daemons or the problem of not being able to manage systems because daemons are uninstalled.  Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced. Ansible is decentralized--it relies on your existing OS credentials to control access to remote machines. If needed, Ansible can easily connect with Kerberos, LDAP, and other centralized authentication management systems.
+
+This documentation covers the version of Ansible noted in the upper left corner of this page. We maintain multiple versions of Ansible and of the documentation, so please be sure you are using the version of the documentation that covers the version of Ansible you're using. For recent features, we note the version of Ansible where the feature was added.
+
+Ansible releases a new major release of Ansible approximately three to four times per year. The core application evolves somewhat conservatively, valuing simplicity in language design and setup. However, the community around new modules and plugins being developed and contributed moves very quickly, adding many new modules in each release.
+
+
+# ZiSoft Awareness
+
+
+# ZiSoft Awareness
+
+```
+ZiSoft Awareness Application
+```
+Awareness is Zisoft's web application that gives you tools to run educational and
+awareness campaigns. This document explains how to get up and running with awareness
+system.
+
+
+**Phishing simulations**
+Beside introducing real-world customizable phishing simulations, Entrench offers anti-
+phishing behavior management feature which allows to measure awareness level of your
+employees.
+**Training Modules**
+Entrench training modules are offered in a variety of styles with full animation and
+narratives in many languages.
+**Filmed Videos**
+Security awareness sessions are no longer boring or dull. Sessions we offer based on
+(simplicity, Humor, ease of use and story-telling.
+**Quizzes and Exams**
+Entrench quizzes and exams can measure level of awareness that has been conveyed to
+the users.
+
+
+**Customized Campaigns**
+Awareness campaigns can be customized and targeted to either specific group of users or
+an entire department
+Zisoft is composed of several independent modules so you can pick and choose which
+modules you need to deploy. All modules are accessible from the same familiar user
+interface. The ZiSoft modules are
+1. Learning Management System
+2. Security Awareness Content
+3. Email Phishing Simulator
+
+## Learning Management System
+
+Think of Zisoft LMS as your own private 'Coursera' or 'Udemy'. You use it to create courses
+complete with videos, slides, quizzes, exams, and certificates. Then you assign the courses
+to your employees and monitor their training in real-time. You can assign as many lessons
+you need to as many employees you need, and you can generate comprehensive reports in
+a variety of formats and charts.
+
+
+## Security Awareness Content
+
+On top of the LMS, Zisoft offers Zinad's security awareness content. These are predefined
+courses and exams that target security related topics. It offers 'Email Security', 'Data
+Leakage', 'Device Security', 'Browser Security', among many others.
+
+## Email Phishing Simulator
+
+
+You are under a constant stream of phishing attacks whether you believe it or not. If you
+want to make sure, try our phishing simulator. With this simulator, you can send a
+'controlled' and 'harmless' phishing email to a group of your organization users, and you
+can monitor in real time how many of them fall victim for those attacks. With the simulator,
+you can generate a report that tells you the percentage of your organization who is prone to
+phishing attacks, rank the departments according to their vulnerability, and conduct
+competitions for the employees to encourage them to be better at spotting phishing
+attacks.
+
+
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Installation, Upgrade & Configuration
+
+   sizing/sizing
+
