@@ -2,16 +2,7 @@ Zisoft Awareness Documentation
 =====================
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Intro
-
-   intro/overview
-
-
-
-.. toctree::
    :maxdepth: 2
-   :caption: Installation, Upgrade & Configuration
+   :caption: Getting Started
 
-   sizing/sizing1
-
+   getting_started/getting_started
