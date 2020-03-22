@@ -7,7 +7,7 @@ The documentation will be available following this pattern:
 
 https//:[github-handle].github.io/[repository]
 
-(e.g. https://lotharschulz.github.io/sphinx-pages/)
+(e.g. https://entrench-docs.github.io/awareness/)
 
 Github.com enables pages automatically if a _gh-pages_ branch exists:
 <kbd>![gh-pages recognition](/pages-created-from-gh-pages-branch.png)</kbd>
@@ -45,5 +45,5 @@ sphinx-build -b html . _build
 sphinx-autobuild . _build --open-browser # opens built docs in browser
 ```
 
-### Blog Post
-- https://www.lotharschulz.info/2017/12/11/sphinx-gh-pages/
+### Zisoft Awareness documentation URL :
+https://entrench-docs.github.io/awareness/
