@@ -1,8 +1,0 @@
-Zisoft Awareness Documentation
-=====================
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Getting Started
-
-   getting_started/getting_started
