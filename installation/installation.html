@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Initial Configuration" href="../user_guide/user_guide.html" />
+    <link rel="prev" title="Getting Started" href="../getting_started/getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zisoft Awareness
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html#faq">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#notes-for-windows">Notes for Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-with-docker">Installing With Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-with-docker-on-existing-database">Installing with Docker on Existing Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-without-docker">Installing without Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manually-starting-the-queue-runner">Manually Starting the Queue Runner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-the-database">Setup the database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-content-videos">Installing Content (Videos)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-zinad-content">Installing Zinad Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-ssl-certificates-for-https">Installing SSL Certificates for HTTPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-licenses-activation">Installing Licenses (Activation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-demo-data">Installing Demo Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-demo-data-resetting-database">Deleting Demo Data (Resetting Database)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#appendix-a-installing-prerequisites">Appendix A: Installing Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-on-amazon-aws">Installing on Amazon AWS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html">Initial Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#training-campaign">Training Campaign</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#email-server-settings">Email Server Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#phishing">Phishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#reporting">Reporting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Deployment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html">Awareness HA Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-offline-deployment">Awareness Offline Deployment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zisoft Awareness</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/installation/installation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>Installation Guide</p>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>The recommended environment to build and deploy the “Awareness” system is Docker. We offer ready-made images that can make the process much easier. If you prefer to do it the traditional way, you will need to replicate what the Docker images do.</p>
+<div class="section" id="notes-for-windows">
+<h2>Notes for Windows<a class="headerlink" href="#notes-for-windows" title="Permalink to this headline">¶</a></h2>
+<p>If you are running Docker on Windows, make sure you use a bash shell such as <a class="reference external" href="https://git-scm.com/downloads">Git Bash</a>. You also might need to add <code class="docutils literal notranslate"><span class="pre">winpty</span></code> before all docker commands if you see an error message complaining about terminals. For example, run <code class="docutils literal notranslate"><span class="pre">winpty</span> <span class="pre">docker</span> <span class="pre">exec</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code></p>
+</div>
+<div class="section" id="installing-with-docker">
+<h2>Installing With Docker<a class="headerlink" href="#installing-with-docker" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>Install <a class="reference external" href="https://www.docker.com/get-started">Docker 18.03.1-ce or later</a></li>
+<li>Open a command line terminal and navigate <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the root of the “Awareness” directory</li>
+<li>From the command line, run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> to make sure Docker is running and no previous version of Awareness is running.</li>
+<li>run the zommand <code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">build</span> <span class="pre">--docker</span> <span class="pre">--sass</span> <span class="pre">--app</span> <span class="pre">--ui</span> <span class="pre">--composer</span></code></li>
+<li>runt he command <code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">package</span></code></li>
+<li>run the command <code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">deploy</span> <span class="pre">--prod</span></code> or <code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">deploy</span> <span class="pre">--pord</span> <span class="pre">--win</span></code> if you are on windows</li>
+<li>If this is the first time you run the application on docker, you need to run the <code class="docutils literal notranslate"><span class="pre">init</span></code> script inside the docker web container by running the command <code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">exec</span> <span class="pre">web</span> <span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">db:seed</span> <span class="pre">--class=init</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="installing-with-docker-on-existing-database">
+<h2>Installing with Docker on Existing Database<a class="headerlink" href="#installing-with-docker-on-existing-database" title="Permalink to this headline">¶</a></h2>
+<p>If you already have a database and would like to connect the awareness system to it</p>
+<ol class="simple">
+<li>Open the <code class="docutils literal notranslate"><span class="pre">.nev</span></code> file and change your database hostname, port, and credentials</li>
+<li>Open the <code class="docutils literal notranslate"><span class="pre">docker-compose.prod.yml</span></code> file and comment out the <code class="docutils literal notranslate"><span class="pre">db</span></code> service.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">deploy</span> <span class="pre">--prod</span></code> to start the web servers only without the database server. Then run the <code class="docutils literal notranslate"><span class="pre">init</span></code> script as above</li>
+</ol>
+</div>
+<div class="section" id="installing-without-docker">
+<h2>Installing without Docker<a class="headerlink" href="#installing-without-docker" title="Permalink to this headline">¶</a></h2>
+<p>Docker is the recommended deployment environment for “Awareness”, but if you would like to deploy the application to your own PHP application server, you will need to replicate what docker does automatically for you …</p>
+<ol class="simple">
+<li>Copy the application directory into the www/ or http/ or /app directory of your application folder (Make sure this is NOT your public folder because you will be exposing your application’s secret files to the world)</li>
+<li>Change your app server configurations to point the DocumentRoot to the ‘public’ directory that is inside the awareness folder</li>
+<li>Open the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file and change the database connection configurations</li>
+<li>If you are using Apache <code class="docutils literal notranslate"><span class="pre">httpd</span></code>, make sure to enable <code class="docutils literal notranslate"><span class="pre">AllowRewrite</span> <span class="pre">all</span></code> for the <code class="docutils literal notranslate"><span class="pre">/www/html</span></code> path. Otherwise, the GUI will start fine but will not be able to connect to the backend PHP application.</li>
+<li>Restart the app server if needed</li>
+</ol>
+</div>
+<div class="section" id="manually-starting-the-queue-runner">
+<h2>Manually Starting the Queue Runner<a class="headerlink" href="#manually-starting-the-queue-runner" title="Permalink to this headline">¶</a></h2>
+<p>Several actions that you take on the “Awareness” system are actually executed within background processes called “jobs”. Jobs are inserted in a queue and a queue “runner” executes them one by one. The queue runner starts automatically with the Docker images, but you will need to start it manually without Docker if you will be using LDAP or sending Emails because both LDAP and Emails are executed inside jobs. To start the queue runner</p>
+<ol class="simple">
+<li>cd into the root of the application directory</li>
+<li><code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">queue:listen</span> <span class="pre">--timeout=0</span></code></li>
+</ol>
+<p>Note: this command will capture the terminal and the terminal will have to be open as long as the queue is running. You will need to use redirection or any daemon facility of your operating system to run this command in the background</p>
+<p>For example, to use redirection,
+<code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">queue:listen</span> <span class="pre">--timeout</span> <span class="pre">2&gt;&amp;1</span> <span class="pre">&gt;</span> <span class="pre">/dev/null</span> <span class="pre">&amp;</span></code></p>
+</div>
+<div class="section" id="setup-the-database">
+<h2>Setup the database<a class="headerlink" href="#setup-the-database" title="Permalink to this headline">¶</a></h2>
+<p>If this is the first time installing the database, you will need to run <code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">db:seed</span> <span class="pre">--class=init</span></code> script from the root of the application directory to setup the database tables. Make sure you have the correct parameters in the .env file first</p>
+</div>
+<div class="section" id="installing-content-videos">
+<h2>Installing Content (Videos)<a class="headerlink" href="#installing-content-videos" title="Permalink to this headline">¶</a></h2>
+<p>The “Awareness” system is logically separated from the content it serves. The security content (videos) have to be installed separately. Installing is as simple as copying your video files to the public/videos/ directory inside you application. You will then need to reference those files in the “Videos” section inside the “Administrator” panel. For example, if you have a video in <code class="docutils literal notranslate"><span class="pre">/var/www/html/public/videos/social_engineering.mp4</span></code>, then you will use the address <code class="docutils literal notranslate"><span class="pre">videos/social_engineering.mp4</span></code> when referring to this video in the Administrator panel.</p>
+</div>
+<div class="section" id="installing-zinad-content">
+<h2>Installing Zinad Content<a class="headerlink" href="#installing-zinad-content" title="Permalink to this headline">¶</a></h2>
+<p>Out of the box, ZiSoft comes packaged with security training content from ZINAD. However, you need to activate it to be able to add it to campaigns. To activate a lesson, run the command <code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">zinad:lesson</span> <span class="pre">&lt;title&gt;</span> <span class="pre">&lt;version&gt;</span> <span class="pre">&lt;resolution&gt;</span> <span class="pre">&lt;mode&gt;</span></code>. For example, to install the <code class="docutils literal notranslate"><span class="pre">browser</span></code> lesson with resolution <code class="docutils literal notranslate"><span class="pre">320</span></code> on a production system <code class="docutils literal notranslate"><span class="pre">prod</span></code>, run the command <code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">zinad:lesson</span> <span class="pre">browser</span> <span class="pre">1</span> <span class="pre">720</span> <span class="pre">prod</span></code></p>
+</div>
+<div class="section" id="installing-ssl-certificates-for-https">
+<h2>Installing SSL Certificates for HTTPS<a class="headerlink" href="#installing-ssl-certificates-for-https" title="Permalink to this headline">¶</a></h2>
+<p>If you are deploying this yourself on your own premiss, chances are you don’t have the ssl keys and certificate that are automatically setup when you are using zisoftonline cloud. You have two options at this point</p>
+<ul class="simple">
+<li>Disable https</li>
+<li>Install your own certificates and keep using HTTPS</li>
+</ul>
+<p>To disable https, simply edit the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file and change the value <code class="docutils literal notranslate"><span class="pre">ZISOFT_SSL</span></code> from <code class="docutils literal notranslate"><span class="pre">true</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
+<p>The steps to install your own certificates differ if you are using Docker or not.</p>
+<p>When using Docker, open the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file on the root of the application, and change the following three files to your certificate file, private key file, and the certifcate chain file respectively</p>
+<ul class="simple">
+<li>ssl/zisoftonline.com.june.18.crt</li>
+<li>ssl/zisoftonline.com.june.18.key</li>
+<li>ssl/zisoftonline.com.june.18.chain.crt</li>
+</ul>
+</div>
+<div class="section" id="installing-licenses-activation">
+<h2>Installing Licenses (Activation)<a class="headerlink" href="#installing-licenses-activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Login with an admin account</li>
+<li>Go to Administrator -&gt; Settings -&gt; Licenses</li>
+<li>Click “+ Import License”</li>
+<li>Copy and paste the activation key which looks like <code class="docutils literal notranslate"><span class="pre">{&quot;users&quot;:</span> <span class="pre">X,</span> <span class="pre">&quot;client&quot;:</span> <span class="pre">XXXX,</span> <span class="pre">&quot;date&quot;:</span> <span class="pre">XXXX}XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...</span></code></li>
+<li>Click Save</li>
+</ul>
+</div>
+<div class="section" id="installing-demo-data">
+<h2>Installing Demo Data<a class="headerlink" href="#installing-demo-data" title="Permalink to this headline">¶</a></h2>
+<p>ZiSoft comes pre packaged with demo data you can install to help you understand the features of the system. To install this demo data, execute the command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">&lt;web_container_id&gt;</span> <span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">zisoft:demo</span> <span class="pre">&lt;users&gt;</span> <span class="pre">&lt;campaigns&gt;</span> <span class="pre">&lt;days&gt;</span></code>. The parameters are described below</p>
+<ul class="simple">
+<li>users: number of demo users you want to add to the system. This has to be less than or equals max number of users in the applicationn settings. So make sure to set the max first.</li>
+<li>campaigns: number of demo campaigns to create. This will create the same number of “training” and “phishing” campaigns all named “Campaign 1”, “Camapign 2”, and so on.</li>
+<li>days: the number of history days to generate random data. For example, 30 days means the system will have demo activity dating up to 30 days in the past.</li>
+</ul>
+<p>An example command would be <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">1a35fac34</span> <span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">zisoft:demo</span> <span class="pre">100</span> <span class="pre">5</span> <span class="pre">30</span></code></p>
+</div>
+<div class="section" id="deleting-demo-data-resetting-database">
+<h2>Deleting Demo Data (Resetting Database)<a class="headerlink" href="#deleting-demo-data-resetting-database" title="Permalink to this headline">¶</a></h2>
+<p>To reset the demo data in transition from a demo installation to a prod one, or to start over the demo for example, run the following commands in sequence (while the system is up).</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">exec</span> <span class="pre">exec</span> <span class="pre">web</span> <span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">db:seed</span> <span class="pre">--class=DropRecreateDB</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">zisoft</span> <span class="pre">exec</span> <span class="pre">exec</span> <span class="pre">web</span> <span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">migrate</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">web</span> <span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">db:seed</span> <span class="pre">--class=init</span></code></li>
+</ul>
+<p>NOTE: This will wipe out the entire database including all customer data, out-of-the-box data, and any demo data. However, this will not change any file system customizations. For example, this will not change theme color customizations or the customer logo.</p>
+</div>
+<div class="section" id="appendix-a-installing-prerequisites">
+<h2>Appendix A: Installing Prerequisites<a class="headerlink" href="#appendix-a-installing-prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-on-amazon-aws">
+<h3>Installing on Amazon AWS<a class="headerlink" href="#installing-on-amazon-aws" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li>Open “https://aws.amazon.com/”</li>
+<li>Sign in through AWS Management Console.</li>
+<li>Search for “EC2” within the AWS services.</li>
+<li>Click on Launch Instance to create a new instance.</li>
+<li>Choose “Amazon Linux 2 AMI (HVM), SSD Volume Type” as Amazon Machine Image (AMI).</li>
+<li>Choose “t2.small” as instance type (smallest supported machine).</li>
+<li>Go to “Add Storage” configuration &amp; change the size(GiB) to 16 GB instead of 8 GB.</li>
+<li>Go to “Security Group” configuration &amp; add “SSH” , “HTTP” and “HTTPS” as security types.</li>
+<li>Click on “Launch”, then you have to either create new pair key or choose an existing key pair.</li>
+<li>Click on “Launch Instance”.</li>
+<li>Go to the created instance and give it a name (optional).</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-i</span> <span class="pre">&lt;Your</span> <span class="pre">Private</span> <span class="pre">Key.pem&gt;</span> <span class="pre">ec2-user&#64;&lt;Your</span> <span class="pre">Instance</span> <span class="pre">DNS</span> <span class="pre">Name</span> <span class="pre">Server&gt;</span></code> to access to the instance. Make sure your key has 600 permissions or less.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">docker</span></code> to install docker.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">git</span></code> to install GIT.</li>
+<li>Run `scp -i <Your private key.pem> zisoft_ro ec2-user&#64;<Your Instance DNS Name Server>:~’ from your local machine to copy &amp; transfer the private key ‘zisoft_ro’ to the instance.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-a</span> <span class="pre">-G</span> <span class="pre">docker</span> <span class="pre">ec2-user</span></code> to give the EC2-USER acess to docker.</li>
+<li>Logout “Ctrl+D” then login again as step No.1.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">docker</span> <span class="pre">start</span></code> to start the docker service.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chkconfig</span> <span class="pre">docker</span> <span class="pre">on</span></code> to set the docker service to start with system reboot.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">eval</span> <span class="pre">$(ssh-agent</span> <span class="pre">-s)</span></code>.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">ssh-add</span> <span class="pre">~/zisoft_ro</span></code>.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;gitlab.com:zisoft/awareness.git</span></code>.</li>
+<li>Install from source using the helper docker image.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../user_guide/user_guide.html" class="btn btn-neutral float-right" title="Initial Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../getting_started/getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Entrench
+      <span class="lastupdated">
+        Last updated on 2020-Mar-29.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
