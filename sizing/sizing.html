@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ZiSoft Awareness HW Sizing &mdash; Zisoft Awareness 3.0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zisoft Awareness
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html#faq">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html">Initial Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#training-campaign">Training Campaign</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#email-server-settings">Email Server Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#phishing">Phishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/user_guide.html#reporting">Reporting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Deployment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html">Awareness HA Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-offline-deployment">Awareness Offline Deployment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zisoft Awareness</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li><strong>ZiSoft Awareness HW Sizing</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/sizing/sizing.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="zisoft-awareness-hw-sizing">
+<h1><strong>ZiSoft Awareness HW Sizing</strong><a class="headerlink" href="#zisoft-awareness-hw-sizing" title="Permalink to this headline">¶</a></h1>
+<p>ZiSoft Awareness is a flexible web-based application that is designed to
+accommodate both small-scale implementation in a single department and
+large-scale application in organizations with thousands of users.
+Large-scale execution, however, requires careful planning and an
+adequate setup to accommodate the processing, bandwidth and storage
+needs of the system.</p>
+<p>*** General Environment Sizing Notes ***</p>
+<p>ZiSoft Awareness is a data intensive platform. As such, the majority of
+the workload is usually dependent on the database environment. A
+properly tuned database environment is an absolute requirement for a
+production environment in ZiSoft Awareness. Many of the sizings detailed
+will be focused on data storage.</p>
+<p>ZiSoft Awareness is used in various enterprise environments with
+different use cases. The Best Practices described below is not a one
+size fit all solution. Please take your use cases into account and use
+your best judgement to determine the best architecture solution.</p>
+<p><em><strong>ZiSoft Application Server Sizing and Deployment</strong></em></p>
+<p>The key to any server sizing project is to determine and understand the
+guidelines and types of workloads involved when running on a
+large-scale. Read the following guidelines below to help accurately
+evaluate your system requirements:</p>
+<p><em><strong>Process Capability and Memory</strong></em></p>
+<ul class="simple">
+<li>Estimate the number of cases to be created per day. The number of
+processes created in a day has an effect on the performance of Zisoft
+Awareness, which is why its important to have an estimate before
+sizing the server.</li>
+<li>Consider the total number of nominal users that are expected to be
+using Zisoft Awareness ( 250,000 users )</li>
+<li>Use a web application server tuned for medium CPU and memory
+capacity.</li>
+<li>Depending on the level of redundancy security the customer requires,
+the production web application server cluster should at LEAST support
+one server being unavailable. This means the other remaining servers
+should have surplus CPU/RAM capacity to handle the extra load if this
+occurs. For example, if there are two production servers, ideally 50%
+of one server’s capacity should handle 100% of the volume at peak, at
+a minimum.</li>
+<li>Consider one CPU core (or hyper-thread) to every 4 gigabytes of
+memory.</li>
+<li>For example, for a web application server that has 64GB of memory, a
+16 thread/core processing environment is suggested.</li>
+<li>Assume a maximum allowed size per server to be 128GB of memory, with
+a minimum of 32 thread processing.</li>
+<li>Assume a minimum base frequency of 2.4GHz</li>
+<li>Consider dedicating 64MB for one active user at a time.</li>
+<li>This value might change depending on memory requirements for certain
+processes, etc.</li>
+<li>This value is based on the memory_limit in PHP’s configuration file
+and should also account for the overhead web server memory
+requirements.</li>
+<li>For the total amount of users, ensure that there is a buffer that
+allows for 30% spikes at any time.</li>
+</ul>
+<p><em><strong>Network Speed</strong></em></p>
+<ul class="simple">
+<li>These servers should have gigabit network interfaces and should be
+local to the shared resources of the load balancer and dependencies
+(file server, databases and caching). Ensure that your router and
+Internet bandwidth supports your expected incoming and outgoing
+traffic.</li>
+</ul>
+<p>*** Standard Calculating Hardware Requirements***</p>
+<p>The sections below provide guidance on how to calculate hardware
+requirements, taking various considerations into account.</p>
+<p>*** Total Memory Required Calculation***</p>
+<p>(pu * mmpu * 1.3) / 2048 = tm</p>
+<p>Where:</p>
+<ul class="simple">
+<li><strong>pu:</strong> Peak number of Active users.</li>
+<li><strong>mmpu:</strong> Maximum amount of memory in megabytes per user.</li>
+<li><strong>1.3:</strong> Allows for 30% growth/spikes at peak.</li>
+<li><strong>tm:</strong> Total memory required for this environment.</li>
+</ul>
+<p><em><strong>Total Minimum Servers Required Calculation</strong></em></p>
+<p>(tm * rl) / 2 * mps = sc &gt; 2 (sc rounded up) or rl = ms</p>
+<p>Where:</p>
+<ul class="simple">
+<li><strong>tm:</strong> Total memory required.</li>
+<li><strong>rl:</strong> The redundancy level specified (a minimum of 2). There is
+always a minimum level of redundancy required.</li>
+<li><strong>mps:</strong> Maximum amount of memory per server the customer can acquire
+(a maximum of 128GB is recommended).</li>
+<li><strong>sc:</strong> Total server count. Round up sc to ensure an adequate number
+of servers.</li>
+<li><strong>mw:</strong> Minimum number of servers required.</li>
+</ul>
+<p><em><strong>Memory Per Server Calculation</strong></em></p>
+<p>(tm * rl) / (2 * ms ) = (mmps rounded up to whole number divisible by
+8) = mps</p>
+<p>Where:</p>
+<ul class="simple">
+<li><strong>tm:</strong> Total memory required.</li>
+<li><strong>rl:</strong> Redundancy level required by customer.</li>
+<li><strong>ms:</strong> Minimum number of servers required.</li>
+<li><strong>mmps:</strong> Minimum amount of memory required per server.</li>
+<li><strong>mps:</strong> The value of mmps rounded up to a whole number divisible by
+8.</li>
+</ul>
+<p>*** CPU Core/Thread Per Server Minimum***</p>
+<p>(mps / 4) = cps</p>
+<ul class="simple">
+<li><strong>mps:</strong> Memory per server.</li>
+<li><strong>cps:</strong> Number of cores/threads per server.</li>
+</ul>
+<p>*** Data Transfer***</p>
+<p>(users * adt / cput) = dt</p>
+<ul class="simple">
+<li><strong>Users :</strong> Number of Active users</li>
+<li><strong>Adt</strong> = (high transfer session data * 0.33) + (Avg transfer
+session data * 0.33) + (low transfer session data * 0.33) / 3 = (
+100 MB * 0.33) + ( 40 MB * 0.33 )+ (1 MB * 0.33 ) / 3 = 15.51 MB</li>
+<li><strong>cput:</strong> cpu session tme out = 30 s</li>
+</ul>
+<p>Estimation HW Sizing</p>
+<p>Estimate HW Sizing when Active users = 5%</p>
+<p>Active users = Concurrent users who access the application at CPUT
+(server CPU Session time out 30s)</p>
+<p>Active users = Total number of users * 5 / 100 = N</p>
+<p>Estimate 5% has an estimated n simultaneous users at their peak time.
+They’ve stated they can only support servers with a max memory of 128
+GB. They request that they have a redundancy level of 3 ( 30 % of their
+fleet could be down at any time). Memory per user will be 64MB).</p>
+<p><em><strong>Cost Estimation per N users</strong></em></p>
+<p>+———+——–+———-+—————+——————-+——————+
+| Users   | vCPU   | Memory   | Network I/O   | No . of Machine   | Estimated Cost   |
++=========+========+==========+===============+===================+==================+
+| 20      | 2      | 4        | 1 G           | 1                 | 60 USD           |
++———+——–+———-+—————+——————-+——————+
+| 40      | 2      | 4        | 1 G           | 1                 | 60 USD           |
++———+——–+———-+—————+——————-+——————+
+| 60      | 4      | 16       | 1 G           | 1                 | 175 USD          |
++———+——–+———-+—————+——————-+——————+
+| 80      | 8      | 32       | 10 G          | 1                 | 400 USD          |
++———+——–+———-+—————+——————-+——————+
+| 100     | 8      | 32       | 10 G          | 1                 | 400 USD          |
++———+——–+———-+—————+——————-+——————+
+| 200     | 16     | 64       | 10G           | 1                 | 800 USD          |
++———+——–+———-+—————+——————-+——————+
+| 300     | 16     | 64       | 10 G          | 1                 | 800 USD          |
++———+——–+———-+—————+——————-+——————+
+| 400     | 16     | 64       | 10 G          | 2                 | 1600 USD         |
++———+——–+———-+—————+——————-+——————+
+| 600     | 16     | 64       | 10 G          | 2                 | 1600 USD         |
++———+——–+———-+—————+——————-+——————+
+| 800     | 16     | 64       | 10 G          | 3                 | 2400 USD         |
++———+——–+———-+—————+——————-+——————+
+| 1000    | 16     | 64       | 10 G          | 4                 | 3200 USD         |
++———+——–+———-+—————+——————-+——————+</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Entrench
+      <span class="lastupdated">
+        Last updated on 2020-Mar-29.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
