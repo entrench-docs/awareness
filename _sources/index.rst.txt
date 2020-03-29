@@ -24,12 +24,7 @@ Zisoft Awareness Documentation
    :caption: Deployment
 
    Deployment/deployment
-   
-   .. toctree::
-   :maxdepth: 2
-   :caption: Sizing
-
-   sizing/sizing
+ 
 
 
 
