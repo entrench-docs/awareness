@@ -21,14 +21,14 @@ different use cases. The Best Practices described below is not a one
 size fit all solution. Please take your use cases into account and use
 your best judgement to determine the best architecture solution.
 
-***ZiSoft Application Server Sizing and Deployment***
+*** ZiSoft Application Server Sizing and Deployment ***
 
 The key to any server sizing project is to determine and understand the
 guidelines and types of workloads involved when running on a
 large-scale. Read the following guidelines below to help accurately
 evaluate your system requirements:
 
-***Process Capability and Memory***
+*** Process Capability and Memory ***
 
 -  Estimate the number of cases to be created per day. The number of
    processes created in a day has an effect on the performance of Zisoft
@@ -61,7 +61,7 @@ evaluate your system requirements:
 -  For the total amount of users, ensure that there is a buffer that
    allows for 30% spikes at any time.
 
-***Network Speed***
+*** Network Speed ***
 
 -  These servers should have gigabit network interfaces and should be
    local to the shared resources of the load balancer and dependencies
@@ -144,6 +144,11 @@ Estimate 5% has an estimated n simultaneous users at their peak time.
 They've stated they can only support servers with a max memory of 128
 GB. They request that they have a redundancy level of 3 ( 30 % of their
 fleet could be down at any time). Memory per user will be 64MB).
+
+
+.. image:: https://zisoft-jmeter.s3-us-west-2.amazonaws.com/Tests/Error.png
+  :width: 400
+  :alt: Error precentage 
 
 ***Cost Estimation per N users***
 
