@@ -1,8 +1,9 @@
-Getting Started
+Awareness Overview
 
-# Getting Started
+# Awareness Overview
 
 `Awareness` is [Zisoft](https://www.zisoftonline.com "Zisoftonline")'s web application that gives you tools to run educational and awareness campaigns. This document explains how to get up and running with awareness system.
+![](https://zisoft-public.s3-eu-west-1.amazonaws.com/reports.png)
 
 Zisoft is composed of several independent modules so you can pick and choose which modules you need to deploy. All modules are accessible from the same familiar user interface. The ZiSoft modules are
 
@@ -12,59 +13,25 @@ Zisoft is composed of several independent modules so you can pick and choose whi
 
 ## Learning Management System
 
+![](https://zisoft-public.s3-eu-west-1.amazonaws.com/overview.png)
+
 Think of Zisoft LMS as your own private 'Coursera' or 'Udemy'. You use it to create courses complete with videos, slides, quizzes, exams, and certificates. Then you assign the courses to your employees and monitor their training in real-time. You can assign as many lessons you need to as many employees you need, and you can generate comprehensive reports in a variety of formats and charts.
 
 ## Security Awareness Content
+![](https://zisoft-public.s3-eu-west-1.amazonaws.com/Elearn.png)
 
 On top of the LMS, Zisoft offers [Zinad](https://zinad.net "Zinad")'s security awareness content. These are predefined courses and exams that target security related topics. It offers 'Email Security', 'Data Leakage', 'Device Security', 'Browser Security', among many others.
 
 ## Email Phishing Simulator
 
+![](https://zisoft-public.s3-eu-west-1.amazonaws.com/phish.png)
 You are under a constant stream of phishing attacks whether you believe it or not. If you want to make sure, try our phishing simulator. With this simulator, you can send a 'controlled' and 'harmless' phishing email to a group of your organization users, and you can monitor in real time how many of them fall victim for those attacks. With the simulator, you can generate a report that tells you the percentage of your organization who is prone to phishing attacks, rank the departments according to their vulnerability, and conduct competitions for the employees to encourage them to be better at spotting phishing attacks.
 
 
 
-# FAQ
 
-## Does ZiSoft Awareness offer a desktop client or a mobile app
 
-No, all access to the system is done through the web application.
-
-## What is the recommended browser to use ZiSoft Awareness
-
-ZiSoft awareness supports all major browsers (Chrome, IE 11, Firefox, and Safari), but the recommended browser is Chrome.
-
-## Does ZiSoft require any specific operating system or packages to install
-
-Depends on your deployment method. If you are using "Docker", then the only requirements is the Docker and Docker-Compose. If you are deploying on the OS without Docker, then you have to install more dependencies yourself. Read the installation guide for more info.
-
-## Can ZiSoft be used on mobile web browsers
-
-Yes, ZiSoft Web interface is "responsive". It will resize and adjust to the size of your smartphone or tablet.
-
-## Does ZiSoft offer a cloud/hosted deployment
-
-Absolutely, talk to sales@zisoftonline.com or visit [Zisoft](https://www.zisoftonline.com "Zisoftonline") for more info.
-
-## Does ZiSoft Support HA (High Availability) Installation
-
-Similar to the single deployment, the HA environment distributes the end user load among several web and analytics servers. There is still one single Database and one single background server. The distribution of the front end load can be designed to separate users by region or department, or it can be load balanced among all users in the organization.
-
-![ZiSoft Architecture HA](https://zisoft-public.s3-eu-west-1.amazonaws.com/ZiSoft+HA.png "Zisoft Architecture HA")
-
-## Does ZiSoft support Single Sign On or LDAP
-
-ZiSoft supports both LDAP and single sign on. This means that your users can use their LDAP (e.g. Active Directory) credentials to login, either by typing them in the ZiSoft portal (LDAP) or by being redirected to your Identity provider portal (SSO). Checkout the user guide for more details on how to setup and integrate with LDAP and SSO.
-
-## Does ZiSoft encrypt data
-
-ZiSoft provides application level encryption only for sensetive data such as passwords. If you need to encrypt everything, consider database level encryption with your DBA.
-
-## How much bandwidth does ZiSoft need
-
-ZiSoft Awareness is customizable according to your requirements/capabilities. Out of the box, we have 5 different resolutions of each of the included lessons (320, 480, 720, 1080, and 1440). You can choose which resolution to serve based on your campaign size and network capabilities. For example, if your campaign has 1000 employees, and you expect 100 to be concurrently streaming videos at the same time, then resolution 720 will need a server bandwidth of approximately 70 Mbps.
-
-## What are all the requirements needed to run ZiSoft with all its modules
+## Requirements needed to run ZiSoft with all its modules
 
 Infrastructure: You will need a server with at least 8GB of memory and 2Ghz CPU and is capable of virtualization.
 

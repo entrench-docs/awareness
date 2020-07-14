@@ -3,7 +3,7 @@ Zisoft Awareness Documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
+   :caption: Awareness Overview
 
    getting_started/getting_started
 

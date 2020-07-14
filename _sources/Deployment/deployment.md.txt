@@ -1,6 +1,60 @@
 
 Deployment 
 
+# Awareness Architecture 
+
+![](https://zisoft-public.s3-eu-west-1.amazonaws.com/zisoft.vpd+(1).png)
+## Web Server :
+Web Server has focused on high performance, high concurrency and low memory usage web server functionality, like load balancing, caching, access and bandwidth control, and the ability to integrate efficiently with a variety of applications
+
+  1.   HTTP Handler
+  2.   Serving Static Content
+  3.   Web Server Reverse Proxy
+  4.   Web Server Content Caching
+  5.   Compression and Decompression
+  6.   Secure Connect with SSL CA  
+
+## UI Server ( Angular ) : 
+
+Frontend  part of the application that users can see and interact with directly in order to receive the backend capabilities of the system. It involves everything that the user can see, touch and experience.
+
+## Web Application Server ( Laravel) :
+
+Laravel is a web application framework with expressive, elegant syntax. ... Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching
+
+- AUTHORIZATION TECHNIQUE :
+    Laravel  provides a simple way to organize authorization logic and control access to resources.
+ - OBJECT-ORIENTED LIBRARIES :
+  pre-installed libraries to implement  many advanced features, such as checking active users,                     Bcrypt hashing, password reset, CSRF (Cross-site Request Forgery) protection, and encryption.
+
+-ARTISAN : 
+Developer has to usually interact with the Laravel framework using a command line that creates and handles the Laravel project environment. 
+-MVC SUPPORT :
+Supports MVC Architecture ensuring clarity between logic and presentation. MVC helps in improving the performance, allows better documentation, and has multiple built-in functionalities.
+
+
+-SECURITY :
+Ues Bcrypt hashing algorithm for generating an encrypted representation of a password. Laravel uses prepared SQL statements which make injection attacks unimaginable. Along with this, Laravel provides a simple way to escape user input to avoid user injection of  tag.
+-SSO Integration :
+One-click sign-in: Allows collaborators to sign in from your SSO provider without maintaining a separate username and password.
+Automatic provisioning: Allows authorized users to create account when they require access.
+
+-LDAP Integration : 
+ LDAP integration allows your instance to use your existing LDAP server as the master source of user data.Administrators integrate with a Lightweight Directory Access Protocol (LDAP) directory to streamline the user login process and to automate administrative tasks such as creating users and assigning them role
+
+## Analytics server  ( Metabase ) :
+Analyzing data and presenting actionable information which helps executives, managers and other corporate users make informed training/phishing decisions.
+
+    -  BI : information management tool that is used to track KPIs, metrics, and other key data points relevant to a business, department, or specific process. Through the use of data visualizations, dashboards simplify complex data sets to provide users with at a glance awareness of current performance.
+
+## Cron server :
+Laravel command scheduler allows for the fluent and expressive defining of command schedule within Laravel itself, and only a single Cron entry is needed on the server
+
+## Database Server ( MariaDB) : 
+MariaDB   open source relational database management system (DBMS) that is a compatible drop-in replacement for the widely used MySQL database technology.
+MariaDB sports faster and safer replication with updates being up to 2x faster than with traditional MySQL Replication setups. ... MariaDB replication is backward compatible with MySQL servers,
+
+
 # Awareness HA Deployment
 
 ## NFS: RHEL/CentOS/ Debian/Ubuntu 
