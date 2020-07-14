@@ -470,26 +470,13 @@ Check if swarm mode is active
 
 
  
-## Awareness SMTP Server
+# Awareness SMTP Server
 
 
 A fullstack but simple mail server (smtp, imap, antispam, antivirus...).
 Only configuration files, no SQL database. Keep it simple and versioned.
 Easy to deploy and upgrade.
 
-### ANNOUNCEMENT
-
-At this point we have merged the next branch based on Debian Buster into master.
-That means the docker image latest uses Buster. The change may break things!
-
-The following possibly breaking changes are known:
-- Dovecot will be downgraded a little bit (same major version) so that we can use the official Debian version.
-
-If you want to stick to the old version a while longer, either switch to stable or to a specific version.
-If you run into problems, please raise issues and ask for help. Don't forget to provide details.
-
-
-Includes:
 
 - [Postfix](http://www.postfix.org) with smtp or ldap auth
 - [Dovecot](https://www.dovecot.org) for sasl, imap (and optional pop3) with ssl support, with ldap auth and sieve.
@@ -511,7 +498,7 @@ Includes:
   works out of the box: email for `you+extension@example.com` go to `you@example.com`
 
 
-### Requirements
+## Requirements
 
 Recommended:
 - 1 CPU
@@ -910,7 +897,7 @@ Also note that by default the logs are lost when the container is recycled. To k
 
 Finally the logrotate interval **may** affect the period for generated reports. That is the case when the reports are triggered by log rotation.
 
-### Spamassassin
+## Spamassassin
 
 ##### ENABLE_SPAMASSASSIN
 
@@ -974,7 +961,7 @@ This will uncomment the respective line in ```/etc/spamassasin/local.cf```
 
 Note: activate this only if you are confident in your bayes database for identifying ham.
 
-### Fetchmail
+## Fetchmail
 
 ##### ENABLE_FETCHMAIL
   - **0** => `fetchmail` disabled
@@ -983,7 +970,7 @@ Note: activate this only if you are confident in your bayes database for identif
 ##### FETCHMAIL_POLL
   - **300** => `fetchmail` The number of seconds for the interval
 
-### LDAP
+## LDAP
 
 ##### ENABLE_LDAP
 
@@ -1044,7 +1031,7 @@ Note: activate this only if you are confident in your bayes database for identif
   - **empty** => no
   - yes => LDAP over TLS enabled for Dovecot
 
-### Dovecot
+## Dovecot
 
 The following variables overwrite the default values for ```/etc/dovecot/dovecot-ldap.conf.ext```.
 
@@ -1072,7 +1059,7 @@ The following variables overwrite the default values for ```/etc/dovecot/dovecot
 - Note: The left-hand value is the directory attribute, the right hand value is the dovecot variable.
 - More details on the [Dovecot Wiki](https://wiki.dovecot.org/AuthDatabase/LDAP/PasswordLookups)
 
-### Postgrey
+## Postgrey
 
 ##### ENABLE_POSTGREY
 
@@ -1103,7 +1090,7 @@ Note: This postgrey setting needs `ENABLE_POSTGREY=1`
 
 Note: This postgrey setting needs `ENABLE_POSTGREY=1`
 
-### SASL Auth
+## SASL Auth
 
 ##### ENABLE_SASLAUTHD
 
@@ -1160,7 +1147,7 @@ Note: This postgrey setting needs `ENABLE_POSTGREY=1`
   - **empty** => No sasl_passwd will be created
   - string => `/etc/postfix/sasl_passwd` will be created with the string as password
 
-### SRS (Sender Rewriting Scheme)
+## SRS (Sender Rewriting Scheme)
 
 ##### SRS_SENDER_CLASSES
 
@@ -1192,7 +1179,7 @@ you to replace both instead of just the envelope sender.
   - **empty** => Derived from OVERRIDE_HOSTNAME, DOMAINNAME, or the container's hostname
   - Set this if auto-detection fails, isn't what you want, or you wish to have a separate container handle DSNs
 
-### Default Relay Host
+## Default Relay Host
 
 #### DEFAULT_RELAY_HOST
 
@@ -1201,7 +1188,7 @@ you to replace both instead of just the envelope sender.
     Format: `[example.com]:587` (don't forget the brackets if you need this to
     be compatible with `$RELAY_USER` and `$RELAY_PASSWORD`, explained below).
 
-### Multi-domain Relay Hosts
+## Multi-domain Relay Hosts
 
 #### RELAY_HOST
 

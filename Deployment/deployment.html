@@ -153,16 +153,18 @@
 <li class="toctree-l2"><a class="reference internal" href="#extract-zisoft-xxxxxxx-zip-file">Extract zisoft-xxxxxxx.Zip file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#load-zisoft-awareness-docker-images">Load Zisoft awareness docker images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Deploy Zisoft awareness offline project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#awareness-smtp-server">Awareness SMTP Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#announcement">ANNOUNCEMENT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-docker-compose-environment">Create a docker-compose environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#start-container">Start Container</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#create-your-mail-accounts">Create your mail accounts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generate-dkim-keys">Generate DKIM keys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#restart-and-update-the-container">Restart and update the container</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#spf-forwarding-problems">SPF/Forwarding Problems</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exposed-ports">Exposed ports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#awareness-smtp-server">Awareness SMTP Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-docker-compose-environment">Create a docker-compose environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-container">Start Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-mail-accounts">Create your mail accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-dkim-keys">Generate DKIM keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restart-and-update-the-container">Restart and update the container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spf-forwarding-problems">SPF/Forwarding Problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exposed-ports">Exposed ports</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#examples-with-just-the-relevant-environmental-variables">Examples with just the relevant environmental variables:</a></li>
 </ul>
 </li>
 </ul>
@@ -203,83 +205,83 @@
 <li class="toctree-l3"><a class="reference internal" href="#report-sender-deprecated">REPORT_SENDER (deprecated)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#report-interval-deprecated">REPORT_INTERVAL (deprecated)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#logrotate-interval">LOGROTATE_INTERVAL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spamassassin">Spamassassin</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enable-spamassassin">ENABLE_SPAMASSASSIN</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#spamassassin-spam-to-inbox">SPAMASSASSIN_SPAM_TO_INBOX</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#move-spam-to-junk">MOVE_SPAM_TO_JUNK</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sa-tag">SA_TAG</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sa-tag2">SA_TAG2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sa-kill">SA_KILL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sa-spam-subject">SA_SPAM_SUBJECT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sa-shortcircuit-bayes-spam">SA_SHORTCIRCUIT_BAYES_SPAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sa-shortcircuit-bayes-ham">SA_SHORTCIRCUIT_BAYES_HAM</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#fetchmail">Fetchmail</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enable-fetchmail">ENABLE_FETCHMAIL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fetchmail-poll">FETCHMAIL_POLL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spamassassin">Spamassassin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enable-spamassassin">ENABLE_SPAMASSASSIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spamassassin-spam-to-inbox">SPAMASSASSIN_SPAM_TO_INBOX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-spam-to-junk">MOVE_SPAM_TO_JUNK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sa-tag">SA_TAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sa-tag2">SA_TAG2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sa-kill">SA_KILL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sa-spam-subject">SA_SPAM_SUBJECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sa-shortcircuit-bayes-spam">SA_SHORTCIRCUIT_BAYES_SPAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sa-shortcircuit-bayes-ham">SA_SHORTCIRCUIT_BAYES_HAM</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ldap">LDAP</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enable-ldap">ENABLE_LDAP</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-start-tls">LDAP_START_TLS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-server-host">LDAP_SERVER_HOST</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-search-base">LDAP_SEARCH_BASE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-bind-dn">LDAP_BIND_DN</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-bind-pw">LDAP_BIND_PW</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-query-filter-user">LDAP_QUERY_FILTER_USER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-query-filter-group">LDAP_QUERY_FILTER_GROUP</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-query-filter-alias">LDAP_QUERY_FILTER_ALIAS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-query-filter-domain">LDAP_QUERY_FILTER_DOMAIN</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dovecot-tls">DOVECOT_TLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetchmail">Fetchmail</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enable-fetchmail">ENABLE_FETCHMAIL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fetchmail-poll">FETCHMAIL_POLL</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#dovecot">Dovecot</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dovecot-user-filter">DOVECOT_USER_FILTER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dovecot-user-attrs">DOVECOT_USER_ATTRS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dovecot-pass-filter">DOVECOT_PASS_FILTER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dovecot-pass-attrs">DOVECOT_PASS_ATTRS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ldap">LDAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enable-ldap">ENABLE_LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-start-tls">LDAP_START_TLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-server-host">LDAP_SERVER_HOST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-search-base">LDAP_SEARCH_BASE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-bind-dn">LDAP_BIND_DN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-bind-pw">LDAP_BIND_PW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-query-filter-user">LDAP_QUERY_FILTER_USER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-query-filter-group">LDAP_QUERY_FILTER_GROUP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-query-filter-alias">LDAP_QUERY_FILTER_ALIAS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-query-filter-domain">LDAP_QUERY_FILTER_DOMAIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dovecot-tls">DOVECOT_TLS</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#postgrey">Postgrey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enable-postgrey">ENABLE_POSTGREY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#postgrey-delay">POSTGREY_DELAY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#postgrey-max-age">POSTGREY_MAX_AGE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#postgrey-auto-whitelist-clients">POSTGREY_AUTO_WHITELIST_CLIENTS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#postgrey-text">POSTGREY_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dovecot">Dovecot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dovecot-user-filter">DOVECOT_USER_FILTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dovecot-user-attrs">DOVECOT_USER_ATTRS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dovecot-pass-filter">DOVECOT_PASS_FILTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dovecot-pass-attrs">DOVECOT_PASS_ATTRS</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#sasl-auth">SASL Auth</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enable-saslauthd">ENABLE_SASLAUTHD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-mechanisms">SASLAUTHD_MECHANISMS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-mech-options">SASLAUTHD_MECH_OPTIONS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-ldap-server">SASLAUTHD_LDAP_SERVER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-ldap-ssl">SASLAUTHD_LDAP_SSL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-ldap-bind-dn">SASLAUTHD_LDAP_BIND_DN</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-ldap-password">SASLAUTHD_LDAP_PASSWORD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-ldap-search-base">SASLAUTHD_LDAP_SEARCH_BASE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#saslauthd-ldap-filter">SASLAUTHD_LDAP_FILTER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sasl-passwd">SASL_PASSWD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#postgrey">Postgrey</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enable-postgrey">ENABLE_POSTGREY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postgrey-delay">POSTGREY_DELAY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postgrey-max-age">POSTGREY_MAX_AGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postgrey-auto-whitelist-clients">POSTGREY_AUTO_WHITELIST_CLIENTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postgrey-text">POSTGREY_TEXT</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#srs-sender-rewriting-scheme">SRS (Sender Rewriting Scheme)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#srs-sender-classes">SRS_SENDER_CLASSES</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#srs-exclude-domains">SRS_EXCLUDE_DOMAINS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#srs-secret">SRS_SECRET</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#srs-domainname">SRS_DOMAINNAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sasl-auth">SASL Auth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enable-saslauthd">ENABLE_SASLAUTHD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-mechanisms">SASLAUTHD_MECHANISMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-mech-options">SASLAUTHD_MECH_OPTIONS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-ldap-server">SASLAUTHD_LDAP_SERVER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-ldap-ssl">SASLAUTHD_LDAP_SSL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-ldap-bind-dn">SASLAUTHD_LDAP_BIND_DN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-ldap-password">SASLAUTHD_LDAP_PASSWORD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-ldap-search-base">SASLAUTHD_LDAP_SEARCH_BASE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saslauthd-ldap-filter">SASLAUTHD_LDAP_FILTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sasl-passwd">SASL_PASSWD</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#default-relay-host">Default Relay Host</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">DEFAULT_RELAY_HOST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#srs-sender-rewriting-scheme">SRS (Sender Rewriting Scheme)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#srs-sender-classes">SRS_SENDER_CLASSES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#srs-exclude-domains">SRS_EXCLUDE_DOMAINS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#srs-secret">SRS_SECRET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#srs-domainname">SRS_DOMAINNAME</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#multi-domain-relay-hosts">Multi-domain Relay Hosts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#relay-host">RELAY_HOST</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#relay-port">RELAY_PORT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#relay-user">RELAY_USER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#relay-password">RELAY_PASSWORD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#default-relay-host">Default Relay Host</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">DEFAULT_RELAY_HOST</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-domain-relay-hosts">Multi-domain Relay Hosts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#relay-host">RELAY_HOST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relay-port">RELAY_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relay-user">RELAY_USER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relay-password">RELAY_PASSWORD</a></li>
 </ul>
 </li>
 </ul>
@@ -807,22 +809,12 @@ $ zisoft load
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="awareness-smtp-server">
-<h2>Awareness SMTP Server<a class="headerlink" href="#awareness-smtp-server" title="Permalink to this headline">¶</a></h2>
+<h1>Awareness SMTP Server<a class="headerlink" href="#awareness-smtp-server" title="Permalink to this headline">¶</a></h1>
 <p>A fullstack but simple mail server (smtp, imap, antispam, antivirus…).
 Only configuration files, no SQL database. Keep it simple and versioned.
 Easy to deploy and upgrade.</p>
-<div class="section" id="announcement">
-<h3>ANNOUNCEMENT<a class="headerlink" href="#announcement" title="Permalink to this headline">¶</a></h3>
-<p>At this point we have merged the next branch based on Debian Buster into master.
-That means the docker image latest uses Buster. The change may break things!</p>
-<p>The following possibly breaking changes are known:</p>
-<ul class="simple">
-<li>Dovecot will be downgraded a little bit (same major version) so that we can use the official Debian version.</li>
-</ul>
-<p>If you want to stick to the old version a while longer, either switch to stable or to a specific version.
-If you run into problems, please raise issues and ask for help. Don’t forget to provide details.</p>
-<p>Includes:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://www.postfix.org">Postfix</a> with smtp or ldap auth</li>
 <li><a class="reference external" href="https://www.dovecot.org">Dovecot</a> for sasl, imap (and optional pop3) with ssl support, with ldap auth and sieve.</li>
@@ -843,9 +835,8 @@ If you run into problems, please raise issues and ask for help. Don’t forget t
 <li>Plus addressing (a.k.a. <a class="reference external" href="http://www.postfix.org/postconf.5.html#recipient_delimiter">extension delimiters</a>)
 works out of the box: email for <code class="docutils literal notranslate"><span class="pre">you+extension&#64;example.com</span></code> go to <code class="docutils literal notranslate"><span class="pre">you&#64;example.com</span></code></li>
 </ul>
-</div>
 <div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Recommended:</p>
 <ul class="simple">
 <li>1 CPU</li>
@@ -858,7 +849,7 @@ works out of the box: email for <code class="docutils literal notranslate"><span
 <li>512MB RAM</li>
 </ul>
 <div class="section" id="create-a-docker-compose-environment">
-<h4>Create a docker-compose environment<a class="headerlink" href="#create-a-docker-compose-environment" title="Permalink to this headline">¶</a></h4>
+<h3>Create a docker-compose environment<a class="headerlink" href="#create-a-docker-compose-environment" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Edit the files <code class="docutils literal notranslate"><span class="pre">.env</span></code> and <code class="docutils literal notranslate"><span class="pre">env-mailserver</span></code> to your liking:<ul>
 <li><code class="docutils literal notranslate"><span class="pre">.env</span></code> contains the configuration for docker-compose</li>
@@ -872,26 +863,26 @@ works out of the box: email for <code class="docutils literal notranslate"><span
 </ul>
 </div>
 <div class="section" id="start-container">
-<h4>Start Container<a class="headerlink" href="#start-container" title="Permalink to this headline">¶</a></h4>
+<h3>Start Container<a class="headerlink" href="#start-container" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span> <span class="n">mail</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-your-mail-accounts">
-<h4>Create your mail accounts<a class="headerlink" href="#create-your-mail-accounts" title="Permalink to this headline">¶</a></h4>
+<h3>Create your mail accounts<a class="headerlink" href="#create-your-mail-accounts" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">sh</span> <span class="n">email</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">user</span><span class="nd">@domain</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="generate-dkim-keys">
-<h4>Generate DKIM keys<a class="headerlink" href="#generate-dkim-keys" title="Permalink to this headline">¶</a></h4>
+<h3>Generate DKIM keys<a class="headerlink" href="#generate-dkim-keys" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">sh</span> <span class="n">config</span> <span class="n">dkim</span>
 </pre></div>
 </div>
 <p>Now the keys are generated, you can configure your DNS server by just pasting the content of <code class="docutils literal notranslate"><span class="pre">config/opendkim/keys/domain.tld/mail.txt</span></code> in your <code class="docutils literal notranslate"><span class="pre">domain.tld.hosts</span></code> zone.</p>
 </div>
 <div class="section" id="restart-and-update-the-container">
-<h4>Restart and update the container<a class="headerlink" href="#restart-and-update-the-container" title="Permalink to this headline">¶</a></h4>
+<h3>Restart and update the container<a class="headerlink" href="#restart-and-update-the-container" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">down</span>
 <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span> <span class="n">mail</span>
 </pre></div>
@@ -900,12 +891,12 @@ works out of the box: email for <code class="docutils literal notranslate"><span
 <p>And don’t forget to have a look at the remaining functions of the <code class="docutils literal notranslate"><span class="pre">setup.sh</span></code> script</p>
 </div>
 <div class="section" id="spf-forwarding-problems">
-<h4>SPF/Forwarding Problems<a class="headerlink" href="#spf-forwarding-problems" title="Permalink to this headline">¶</a></h4>
+<h3>SPF/Forwarding Problems<a class="headerlink" href="#spf-forwarding-problems" title="Permalink to this headline">¶</a></h3>
 <p>If you got any problems with SPF and/or forwarding mails, give <a class="reference external" href="https://github.com/roehling/postsrsd/blob/master/README">SRS</a> a try. You enable SRS by setting <code class="docutils literal notranslate"><span class="pre">ENABLE_SRS=1</span></code>. See the variable description for further information.</p>
 <p><code class="docutils literal notranslate"><span class="pre">restart:</span> <span class="pre">always</span></code> ensures that the mail server container (and Filebeat/ELK containers when using the mail server together with ELK stack) is automatically restarted by Docker in cases like a Docker service or host restart or container exit.</p>
 </div>
 <div class="section" id="exposed-ports">
-<h4>Exposed ports<a class="headerlink" href="#exposed-ports" title="Permalink to this headline">¶</a></h4>
+<h3>Exposed ports<a class="headerlink" href="#exposed-ports" title="Permalink to this headline">¶</a></h3>
 <p>| Protocol | Opt-in Encryption<sup>1</sup> | Enforced Encryption | Purpose              |
 |———-|——————————-|———————|———————-|
 | SMTP     | 25                            | N/A                 | Transfer<sup>2</sup> |
@@ -918,7 +909,7 @@ works out of the box: email for <code class="docutils literal notranslate"><span
 <li>A submission port since 2018, <a class="reference external" href="https://tools.ietf.org/html/rfc8314">RFC 8314</a>. Originally a secure variant of port 25.</li>
 </ol>
 <div class="section" id="examples-with-just-the-relevant-environmental-variables">
-<h5>Examples with just the relevant environmental variables:<a class="headerlink" href="#examples-with-just-the-relevant-environmental-variables" title="Permalink to this headline">¶</a></h5>
+<h4>Examples with just the relevant environmental variables:<a class="headerlink" href="#examples-with-just-the-relevant-environmental-variables" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="s">&#39;2&#39;</span>
 
 <span class="nt">services</span><span class="p">:</span>
@@ -1016,7 +1007,6 @@ works out of the box: email for <code class="docutils literal notranslate"><span
   <span class="nt">maillogs</span><span class="p">:</span>
     <span class="nt">driver</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1302,10 +1292,11 @@ If you want to control logrotation for the docker generated logfile see: <a clas
 <p>Also note that by default the logs are lost when the container is recycled. To keep the logs, mount a volume.</p>
 <p>Finally the logrotate interval <strong>may</strong> affect the period for generated reports. That is the case when the reports are triggered by log rotation.</p>
 </div>
+</div>
 <div class="section" id="spamassassin">
-<h3>Spamassassin<a class="headerlink" href="#spamassassin" title="Permalink to this headline">¶</a></h3>
+<h2>Spamassassin<a class="headerlink" href="#spamassassin" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enable-spamassassin">
-<h4>ENABLE_SPAMASSASSIN<a class="headerlink" href="#enable-spamassassin" title="Permalink to this headline">¶</a></h4>
+<h3>ENABLE_SPAMASSASSIN<a class="headerlink" href="#enable-spamassassin" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>0</strong> =&gt; Spamassassin is disabled</li>
 <li>1 =&gt; Spamassassin is enabled</li>
@@ -1314,14 +1305,14 @@ If you want to control logrotation for the docker generated logfile see: <a clas
 Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SPAM_TO_INBOX=1</span></code> for receiving spam messages.</p>
 </div>
 <div class="section" id="spamassassin-spam-to-inbox">
-<h4>SPAMASSASSIN_SPAM_TO_INBOX<a class="headerlink" href="#spamassassin-spam-to-inbox" title="Permalink to this headline">¶</a></h4>
+<h3>SPAMASSASSIN_SPAM_TO_INBOX<a class="headerlink" href="#spamassassin-spam-to-inbox" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>0</strong> =&gt; Spam messages will be bounced (<em>rejected</em>) without any notification (<em>dangerous</em>).</li>
 <li>1 =&gt; Spam messages will be delivered to the inbox and tagged as spam using <code class="docutils literal notranslate"><span class="pre">SA_SPAM_SUBJECT</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="move-spam-to-junk">
-<h4>MOVE_SPAM_TO_JUNK<a class="headerlink" href="#move-spam-to-junk" title="Permalink to this headline">¶</a></h4>
+<h3>MOVE_SPAM_TO_JUNK<a class="headerlink" href="#move-spam-to-junk" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>1</strong> =&gt; Spam messages will be delivered in the <code class="docutils literal notranslate"><span class="pre">Junk</span></code> folder.</li>
 <li>0 =&gt; Spam messages will be delivered in the mailbox.</li>
@@ -1329,35 +1320,35 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 <p>Note: this setting needs <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SPAM_TO_INBOX=1</span></code></p>
 </div>
 <div class="section" id="sa-tag">
-<h4>SA_TAG<a class="headerlink" href="#sa-tag" title="Permalink to this headline">¶</a></h4>
+<h3>SA_TAG<a class="headerlink" href="#sa-tag" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>2.0</strong> =&gt; add spam info headers if at, or above that level</li>
 </ul>
 <p>Note: this spamassassin setting needs <code class="docutils literal notranslate"><span class="pre">ENABLE_SPAMASSASSIN=1</span></code></p>
 </div>
 <div class="section" id="sa-tag2">
-<h4>SA_TAG2<a class="headerlink" href="#sa-tag2" title="Permalink to this headline">¶</a></h4>
+<h3>SA_TAG2<a class="headerlink" href="#sa-tag2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>6.31</strong> =&gt; add ‘spam detected’ headers at that level</li>
 </ul>
 <p>Note: this spamassassin setting needs <code class="docutils literal notranslate"><span class="pre">ENABLE_SPAMASSASSIN=1</span></code></p>
 </div>
 <div class="section" id="sa-kill">
-<h4>SA_KILL<a class="headerlink" href="#sa-kill" title="Permalink to this headline">¶</a></h4>
+<h3>SA_KILL<a class="headerlink" href="#sa-kill" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>6.31</strong> =&gt; triggers spam evasive actions</li>
 </ul>
 <p>Note: this spamassassin setting needs <code class="docutils literal notranslate"><span class="pre">ENABLE_SPAMASSASSIN=1</span></code>. By default, the mailserver is configured to quarantine spam emails. If emails are quarantined, they are compressed and stored in a location dependent on the ONE_DIR setting above. If <code class="docutils literal notranslate"><span class="pre">ONE_DIR=1</span></code> the location is /var/mail-state/lib-amavis/virusmails/. If <code class="docutils literal notranslate"><span class="pre">ONE_DIR=0</span></code> it is /var/lib/amavis/virusmails/. These paths are inside the docker container. To inhibit this behaviour and deliver spam emails, set this to a very high value e.g. 100.0.</p>
 </div>
 <div class="section" id="sa-spam-subject">
-<h4>SA_SPAM_SUBJECT<a class="headerlink" href="#sa-spam-subject" title="Permalink to this headline">¶</a></h4>
+<h3>SA_SPAM_SUBJECT<a class="headerlink" href="#sa-spam-subject" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>***SPAM***</strong> =&gt; add tag to subject if spam detected</li>
 </ul>
 <p>Note: this spamassassin setting needs <code class="docutils literal notranslate"><span class="pre">ENABLE_SPAMASSASSIN=1</span></code></p>
 </div>
 <div class="section" id="sa-shortcircuit-bayes-spam">
-<h4>SA_SHORTCIRCUIT_BAYES_SPAM<a class="headerlink" href="#sa-shortcircuit-bayes-spam" title="Permalink to this headline">¶</a></h4>
+<h3>SA_SHORTCIRCUIT_BAYES_SPAM<a class="headerlink" href="#sa-shortcircuit-bayes-spam" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>1</strong> =&gt; will activate spamassassin short circuiting for bayes spam detection.</li>
 </ul>
@@ -1365,7 +1356,7 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 <p>Note: activate this only if you are confident in your bayes database for identifying spam.</p>
 </div>
 <div class="section" id="sa-shortcircuit-bayes-ham">
-<h4>SA_SHORTCIRCUIT_BAYES_HAM<a class="headerlink" href="#sa-shortcircuit-bayes-ham" title="Permalink to this headline">¶</a></h4>
+<h3>SA_SHORTCIRCUIT_BAYES_HAM<a class="headerlink" href="#sa-shortcircuit-bayes-ham" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>1</strong> =&gt; will activate spamassassin short circuiting for bayes ham detection</li>
 </ul>
@@ -1374,25 +1365,25 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </div>
 </div>
 <div class="section" id="fetchmail">
-<h3>Fetchmail<a class="headerlink" href="#fetchmail" title="Permalink to this headline">¶</a></h3>
+<h2>Fetchmail<a class="headerlink" href="#fetchmail" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enable-fetchmail">
-<h4>ENABLE_FETCHMAIL<a class="headerlink" href="#enable-fetchmail" title="Permalink to this headline">¶</a></h4>
+<h3>ENABLE_FETCHMAIL<a class="headerlink" href="#enable-fetchmail" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>0</strong> =&gt; <code class="docutils literal notranslate"><span class="pre">fetchmail</span></code> disabled</li>
 <li>1 =&gt; <code class="docutils literal notranslate"><span class="pre">fetchmail</span></code> enabled</li>
 </ul>
 </div>
 <div class="section" id="fetchmail-poll">
-<h4>FETCHMAIL_POLL<a class="headerlink" href="#fetchmail-poll" title="Permalink to this headline">¶</a></h4>
+<h3>FETCHMAIL_POLL<a class="headerlink" href="#fetchmail-poll" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>300</strong> =&gt; <code class="docutils literal notranslate"><span class="pre">fetchmail</span></code> The number of seconds for the interval</li>
 </ul>
 </div>
 </div>
 <div class="section" id="ldap">
-<h3>LDAP<a class="headerlink" href="#ldap" title="Permalink to this headline">¶</a></h3>
+<h2>LDAP<a class="headerlink" href="#ldap" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enable-ldap">
-<h4>ENABLE_LDAP<a class="headerlink" href="#enable-ldap" title="Permalink to this headline">¶</a></h4>
+<h3>ENABLE_LDAP<a class="headerlink" href="#enable-ldap" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; LDAP authentification is disabled</li>
 <li>1 =&gt; LDAP authentification is enabled</li>
@@ -1404,14 +1395,14 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </ul>
 </div>
 <div class="section" id="ldap-start-tls">
-<h4>LDAP_START_TLS<a class="headerlink" href="#ldap-start-tls" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_START_TLS<a class="headerlink" href="#ldap-start-tls" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; no</li>
 <li>yes =&gt; LDAP over TLS enabled for Postfix</li>
 </ul>
 </div>
 <div class="section" id="ldap-server-host">
-<h4>LDAP_SERVER_HOST<a class="headerlink" href="#ldap-server-host" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_SERVER_HOST<a class="headerlink" href="#ldap-server-host" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; mail.domain.com</li>
 <li>=&gt; Specify the dns-name/ip-address where the ldap-server</li>
@@ -1419,56 +1410,56 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </ul>
 </div>
 <div class="section" id="ldap-search-base">
-<h4>LDAP_SEARCH_BASE<a class="headerlink" href="#ldap-search-base" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_SEARCH_BASE<a class="headerlink" href="#ldap-search-base" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; ou=people,dc=domain,dc=com</li>
 <li>=&gt; e.g. LDAP_SEARCH_BASE=dc=mydomain,dc=local</li>
 </ul>
 </div>
 <div class="section" id="ldap-bind-dn">
-<h4>LDAP_BIND_DN<a class="headerlink" href="#ldap-bind-dn" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_BIND_DN<a class="headerlink" href="#ldap-bind-dn" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; cn=admin,dc=domain,dc=com</li>
 <li>=&gt; take a look at examples of SASL_LDAP_BIND_DN</li>
 </ul>
 </div>
 <div class="section" id="ldap-bind-pw">
-<h4>LDAP_BIND_PW<a class="headerlink" href="#ldap-bind-pw" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_BIND_PW<a class="headerlink" href="#ldap-bind-pw" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; admin</li>
 <li>=&gt; Specify the password to bind against ldap</li>
 </ul>
 </div>
 <div class="section" id="ldap-query-filter-user">
-<h4>LDAP_QUERY_FILTER_USER<a class="headerlink" href="#ldap-query-filter-user" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_QUERY_FILTER_USER<a class="headerlink" href="#ldap-query-filter-user" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">(&amp;(mail=%s)(mailEnabled=TRUE))</span></code></li>
 <li>=&gt; Specify how ldap should be asked for users</li>
 </ul>
 </div>
 <div class="section" id="ldap-query-filter-group">
-<h4>LDAP_QUERY_FILTER_GROUP<a class="headerlink" href="#ldap-query-filter-group" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_QUERY_FILTER_GROUP<a class="headerlink" href="#ldap-query-filter-group" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">(&amp;(mailGroupMember=%s)(mailEnabled=TRUE))</span></code></li>
 <li>=&gt; Specify how ldap should be asked for groups</li>
 </ul>
 </div>
 <div class="section" id="ldap-query-filter-alias">
-<h4>LDAP_QUERY_FILTER_ALIAS<a class="headerlink" href="#ldap-query-filter-alias" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_QUERY_FILTER_ALIAS<a class="headerlink" href="#ldap-query-filter-alias" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">(&amp;(mailAlias=%s)(mailEnabled=TRUE))</span></code></li>
 <li>=&gt; Specify how ldap should be asked for aliases</li>
 </ul>
 </div>
 <div class="section" id="ldap-query-filter-domain">
-<h4>LDAP_QUERY_FILTER_DOMAIN<a class="headerlink" href="#ldap-query-filter-domain" title="Permalink to this headline">¶</a></h4>
+<h3>LDAP_QUERY_FILTER_DOMAIN<a class="headerlink" href="#ldap-query-filter-domain" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">(&amp;(|(mail=*&#64;%s)(mailalias=*&#64;%s)(mailGroupMember=*&#64;%s))(mailEnabled=TRUE))</span></code></li>
 <li>=&gt; Specify how ldap should be asked for domains</li>
 </ul>
 </div>
 <div class="section" id="dovecot-tls">
-<h4>DOVECOT_TLS<a class="headerlink" href="#dovecot-tls" title="Permalink to this headline">¶</a></h4>
+<h3>DOVECOT_TLS<a class="headerlink" href="#dovecot-tls" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; no</li>
 <li>yes =&gt; LDAP over TLS enabled for Dovecot</li>
@@ -1476,16 +1467,16 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </div>
 </div>
 <div class="section" id="dovecot">
-<h3>Dovecot<a class="headerlink" href="#dovecot" title="Permalink to this headline">¶</a></h3>
+<h2>Dovecot<a class="headerlink" href="#dovecot" title="Permalink to this headline">¶</a></h2>
 <p>The following variables overwrite the default values for <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/dovecot-ldap.conf.ext</span></code>.</p>
 <div class="section" id="dovecot-user-filter">
-<h4>DOVECOT_USER_FILTER<a class="headerlink" href="#dovecot-user-filter" title="Permalink to this headline">¶</a></h4>
+<h3>DOVECOT_USER_FILTER<a class="headerlink" href="#dovecot-user-filter" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">(&amp;(objectClass=PostfixBookMailAccount)(uniqueIdentifier=%n))</span></code></li>
 </ul>
 </div>
 <div class="section" id="dovecot-user-attrs">
-<h4>DOVECOT_USER_ATTRS<a class="headerlink" href="#dovecot-user-attrs" title="Permalink to this headline">¶</a></h4>
+<h3>DOVECOT_USER_ATTRS<a class="headerlink" href="#dovecot-user-attrs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">homeDirectory=home,qmailUID=uid,qmailGID=gid,mailMessageStore=mail</span></code></li>
 <li>=&gt; Specify the directory to dovecot attribute mapping that fits your directory structure.</li>
@@ -1495,13 +1486,13 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </ul>
 </div>
 <div class="section" id="dovecot-pass-filter">
-<h4>DOVECOT_PASS_FILTER<a class="headerlink" href="#dovecot-pass-filter" title="Permalink to this headline">¶</a></h4>
+<h3>DOVECOT_PASS_FILTER<a class="headerlink" href="#dovecot-pass-filter" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">(&amp;(objectClass=PostfixBookMailAccount)(uniqueIdentifier=%n))</span></code></li>
 </ul>
 </div>
 <div class="section" id="dovecot-pass-attrs">
-<h4>DOVECOT_PASS_ATTRS<a class="headerlink" href="#dovecot-pass-attrs" title="Permalink to this headline">¶</a></h4>
+<h3>DOVECOT_PASS_ATTRS<a class="headerlink" href="#dovecot-pass-attrs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>e.g. <code class="docutils literal notranslate"><span class="pre">uid=user,userPassword=password</span></code></li>
 <li>=&gt; Specify the directory to dovecot variable mapping that fits your directory structure.</li>
@@ -1512,37 +1503,37 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </div>
 </div>
 <div class="section" id="postgrey">
-<h3>Postgrey<a class="headerlink" href="#postgrey" title="Permalink to this headline">¶</a></h3>
+<h2>Postgrey<a class="headerlink" href="#postgrey" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enable-postgrey">
-<h4>ENABLE_POSTGREY<a class="headerlink" href="#enable-postgrey" title="Permalink to this headline">¶</a></h4>
+<h3>ENABLE_POSTGREY<a class="headerlink" href="#enable-postgrey" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>0</strong> =&gt; <code class="docutils literal notranslate"><span class="pre">postgrey</span></code> is disabled</li>
 <li>1 =&gt; <code class="docutils literal notranslate"><span class="pre">postgrey</span></code> is enabled</li>
 </ul>
 </div>
 <div class="section" id="postgrey-delay">
-<h4>POSTGREY_DELAY<a class="headerlink" href="#postgrey-delay" title="Permalink to this headline">¶</a></h4>
+<h3>POSTGREY_DELAY<a class="headerlink" href="#postgrey-delay" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>300</strong> =&gt; greylist for N seconds</li>
 </ul>
 <p>Note: This postgrey setting needs <code class="docutils literal notranslate"><span class="pre">ENABLE_POSTGREY=1</span></code></p>
 </div>
 <div class="section" id="postgrey-max-age">
-<h4>POSTGREY_MAX_AGE<a class="headerlink" href="#postgrey-max-age" title="Permalink to this headline">¶</a></h4>
+<h3>POSTGREY_MAX_AGE<a class="headerlink" href="#postgrey-max-age" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>35</strong> =&gt; delete entries older than N days since the last time that they have been seen</li>
 </ul>
 <p>Note: This postgrey setting needs <code class="docutils literal notranslate"><span class="pre">ENABLE_POSTGREY=1</span></code></p>
 </div>
 <div class="section" id="postgrey-auto-whitelist-clients">
-<h4>POSTGREY_AUTO_WHITELIST_CLIENTS<a class="headerlink" href="#postgrey-auto-whitelist-clients" title="Permalink to this headline">¶</a></h4>
+<h3>POSTGREY_AUTO_WHITELIST_CLIENTS<a class="headerlink" href="#postgrey-auto-whitelist-clients" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>5</strong> =&gt; whitelist host after N successful deliveries (N=0 to disable whitelisting)</li>
 </ul>
 <p>Note: This postgrey setting needs <code class="docutils literal notranslate"><span class="pre">ENABLE_POSTGREY=1</span></code></p>
 </div>
 <div class="section" id="postgrey-text">
-<h4>POSTGREY_TEXT<a class="headerlink" href="#postgrey-text" title="Permalink to this headline">¶</a></h4>
+<h3>POSTGREY_TEXT<a class="headerlink" href="#postgrey-text" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>Delayed by postgrey</strong> =&gt; response when a mail is greylisted</li>
 </ul>
@@ -1550,16 +1541,16 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </div>
 </div>
 <div class="section" id="sasl-auth">
-<h3>SASL Auth<a class="headerlink" href="#sasl-auth" title="Permalink to this headline">¶</a></h3>
+<h2>SASL Auth<a class="headerlink" href="#sasl-auth" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enable-saslauthd">
-<h4>ENABLE_SASLAUTHD<a class="headerlink" href="#enable-saslauthd" title="Permalink to this headline">¶</a></h4>
+<h3>ENABLE_SASLAUTHD<a class="headerlink" href="#enable-saslauthd" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>0</strong> =&gt; <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code> is disabled</li>
 <li>1 =&gt; <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code> is enabled</li>
 </ul>
 </div>
 <div class="section" id="saslauthd-mechanisms">
-<h4>SASLAUTHD_MECHANISMS<a class="headerlink" href="#saslauthd-mechanisms" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_MECHANISMS<a class="headerlink" href="#saslauthd-mechanisms" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty =&gt; pam</li>
 <li><code class="docutils literal notranslate"><span class="pre">ldap</span></code> =&gt; authenticate against ldap server</li>
@@ -1570,27 +1561,27 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </ul>
 </div>
 <div class="section" id="saslauthd-mech-options">
-<h4>SASLAUTHD_MECH_OPTIONS<a class="headerlink" href="#saslauthd-mech-options" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_MECH_OPTIONS<a class="headerlink" href="#saslauthd-mech-options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty =&gt; None</li>
 <li>e.g. with SASLAUTHD_MECHANISMS rimap you need to specify the ip-address/servername of the imap server  ==&gt; xxx.xxx.xxx.xxx</li>
 </ul>
 </div>
 <div class="section" id="saslauthd-ldap-server">
-<h4>SASLAUTHD_LDAP_SERVER<a class="headerlink" href="#saslauthd-ldap-server" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_LDAP_SERVER<a class="headerlink" href="#saslauthd-ldap-server" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty =&gt; localhost</li>
 </ul>
 </div>
 <div class="section" id="saslauthd-ldap-ssl">
-<h4>SASLAUTHD_LDAP_SSL<a class="headerlink" href="#saslauthd-ldap-ssl" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_LDAP_SSL<a class="headerlink" href="#saslauthd-ldap-ssl" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty or 0 =&gt; <code class="docutils literal notranslate"><span class="pre">ldap://</span></code> will be used</li>
 <li>1 =&gt; <code class="docutils literal notranslate"><span class="pre">ldaps://</span></code> will be used</li>
 </ul>
 </div>
 <div class="section" id="saslauthd-ldap-bind-dn">
-<h4>SASLAUTHD_LDAP_BIND_DN<a class="headerlink" href="#saslauthd-ldap-bind-dn" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_LDAP_BIND_DN<a class="headerlink" href="#saslauthd-ldap-bind-dn" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty =&gt; anonymous bind</li>
 <li>specify an object with privileges to search the directory tree</li>
@@ -1599,20 +1590,20 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </ul>
 </div>
 <div class="section" id="saslauthd-ldap-password">
-<h4>SASLAUTHD_LDAP_PASSWORD<a class="headerlink" href="#saslauthd-ldap-password" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_LDAP_PASSWORD<a class="headerlink" href="#saslauthd-ldap-password" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty =&gt; anonymous bind</li>
 </ul>
 </div>
 <div class="section" id="saslauthd-ldap-search-base">
-<h4>SASLAUTHD_LDAP_SEARCH_BASE<a class="headerlink" href="#saslauthd-ldap-search-base" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_LDAP_SEARCH_BASE<a class="headerlink" href="#saslauthd-ldap-search-base" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty =&gt; Reverting to SASLAUTHD_MECHANISMS pam</li>
 <li>specify the search base</li>
 </ul>
 </div>
 <div class="section" id="saslauthd-ldap-filter">
-<h4>SASLAUTHD_LDAP_FILTER<a class="headerlink" href="#saslauthd-ldap-filter" title="Permalink to this headline">¶</a></h4>
+<h3>SASLAUTHD_LDAP_FILTER<a class="headerlink" href="#saslauthd-ldap-filter" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>empty =&gt; default filter <code class="docutils literal notranslate"><span class="pre">(&amp;(uniqueIdentifier=%u)(mailEnabled=TRUE))</span></code></li>
 <li>e.g. for active directory: <code class="docutils literal notranslate"><span class="pre">(&amp;(sAMAccountName=%U)(objectClass=person))</span></code></li>
@@ -1620,7 +1611,7 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </ul>
 </div>
 <div class="section" id="sasl-passwd">
-<h4>SASL_PASSWD<a class="headerlink" href="#sasl-passwd" title="Permalink to this headline">¶</a></h4>
+<h3>SASL_PASSWD<a class="headerlink" href="#sasl-passwd" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; No sasl_passwd will be created</li>
 <li>string =&gt; <code class="docutils literal notranslate"><span class="pre">/etc/postfix/sasl_passwd</span></code> will be created with the string as password</li>
@@ -1628,9 +1619,9 @@ Use <code class="docutils literal notranslate"><span class="pre">SPAMASSASSIN_SP
 </div>
 </div>
 <div class="section" id="srs-sender-rewriting-scheme">
-<h3>SRS (Sender Rewriting Scheme)<a class="headerlink" href="#srs-sender-rewriting-scheme" title="Permalink to this headline">¶</a></h3>
+<h2>SRS (Sender Rewriting Scheme)<a class="headerlink" href="#srs-sender-rewriting-scheme" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="srs-sender-classes">
-<h4>SRS_SENDER_CLASSES<a class="headerlink" href="#srs-sender-classes" title="Permalink to this headline">¶</a></h4>
+<h3>SRS_SENDER_CLASSES<a class="headerlink" href="#srs-sender-classes" title="Permalink to this headline">¶</a></h3>
 <p>An email has an “envelope” sender (indicating the sending server) and a
 “header” sender (indicating who sent it). More strict SPF policies may require
 you to replace both instead of just the envelope sender.</p>
@@ -1642,14 +1633,14 @@ you to replace both instead of just the envelope sender.</p>
 </ul>
 </div>
 <div class="section" id="srs-exclude-domains">
-<h4>SRS_EXCLUDE_DOMAINS<a class="headerlink" href="#srs-exclude-domains" title="Permalink to this headline">¶</a></h4>
+<h3>SRS_EXCLUDE_DOMAINS<a class="headerlink" href="#srs-exclude-domains" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; Envelope sender will be rewritten for all domains</li>
 <li>provide comma separated list of domains to exclude from rewriting</li>
 </ul>
 </div>
 <div class="section" id="srs-secret">
-<h4>SRS_SECRET<a class="headerlink" href="#srs-secret" title="Permalink to this headline">¶</a></h4>
+<h3>SRS_SECRET<a class="headerlink" href="#srs-secret" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; generated when the container is started for the first time</li>
 <li>provide a secret to use in base64</li>
@@ -1659,7 +1650,7 @@ you to replace both instead of just the envelope sender.</p>
 </ul>
 </div>
 <div class="section" id="srs-domainname">
-<h4>SRS_DOMAINNAME<a class="headerlink" href="#srs-domainname" title="Permalink to this headline">¶</a></h4>
+<h3>SRS_DOMAINNAME<a class="headerlink" href="#srs-domainname" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; Derived from OVERRIDE_HOSTNAME, DOMAINNAME, or the container’s hostname</li>
 <li>Set this if auto-detection fails, isn’t what you want, or you wish to have a separate container handle DSNs</li>
@@ -1667,9 +1658,9 @@ you to replace both instead of just the envelope sender.</p>
 </div>
 </div>
 <div class="section" id="default-relay-host">
-<h3>Default Relay Host<a class="headerlink" href="#default-relay-host" title="Permalink to this headline">¶</a></h3>
+<h2>Default Relay Host<a class="headerlink" href="#default-relay-host" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h4>DEFAULT_RELAY_HOST<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h3>DEFAULT_RELAY_HOST<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; don’t set default relayhost setting in main.cf</li>
 <li>default host and port to relay all mail through.
@@ -1679,35 +1670,34 @@ be compatible with <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="section" id="multi-domain-relay-hosts">
-<h3>Multi-domain Relay Hosts<a class="headerlink" href="#multi-domain-relay-hosts" title="Permalink to this headline">¶</a></h3>
+<h2>Multi-domain Relay Hosts<a class="headerlink" href="#multi-domain-relay-hosts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="relay-host">
-<h4>RELAY_HOST<a class="headerlink" href="#relay-host" title="Permalink to this headline">¶</a></h4>
+<h3>RELAY_HOST<a class="headerlink" href="#relay-host" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; don’t configure relay host</li>
 <li>default host to relay mail through</li>
 </ul>
 </div>
 <div class="section" id="relay-port">
-<h4>RELAY_PORT<a class="headerlink" href="#relay-port" title="Permalink to this headline">¶</a></h4>
+<h3>RELAY_PORT<a class="headerlink" href="#relay-port" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; 25</li>
 <li>default port to relay mail through</li>
 </ul>
 </div>
 <div class="section" id="relay-user">
-<h4>RELAY_USER<a class="headerlink" href="#relay-user" title="Permalink to this headline">¶</a></h4>
+<h3>RELAY_USER<a class="headerlink" href="#relay-user" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; no default</li>
 <li>default relay username (if no specific entry exists in postfix-sasl-password.cf)</li>
 </ul>
 </div>
 <div class="section" id="relay-password">
-<h4>RELAY_PASSWORD<a class="headerlink" href="#relay-password" title="Permalink to this headline">¶</a></h4>
+<h3>RELAY_PASSWORD<a class="headerlink" href="#relay-password" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>empty</strong> =&gt; no default</li>
 <li>password for default relay user</li>
 </ul>
-</div>
 </div>
 </div>
 </div>
