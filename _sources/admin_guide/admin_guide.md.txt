@@ -12,8 +12,6 @@ There is no public section in the ZiSoft Security Awareness Application. Any use
 
 The system comes with two predefined users
 
-1. Administrator whose username is “admin” and default password is “Admin123@”
-2. Normal User whose username is “user” and password is “User123@”
 
 It is extremely important to change the password of your admin user once you have installed the application. To do so...
 

@@ -631,13 +631,16 @@ If you got any problems with SPF and/or forwarding mails, give [SRS](https://git
      - Retrieval
 
 
-+--------------+----------+-----------+-----------+
-| Protocol | Opt-in Encryption<sup>1</sup> | Enforced Encryptio | Purpose  |
-+--------------+----------+-----------+-----------+
-| row 2        |   row 2  | row 2  | row 2          |
-+--------------+----------+-----------+-----------+
-| row 3        |     row 2      |      row 2      |       row 2     |
-+--------------+----------+-----------+-----------+
+=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False
+True   False  True
+False  True   True
+True   True   True
+=====  =====  ======
 
 1. A connection *may* be secured over TLS when both ends support `STARTTLS`. On ports 110, 143 and 587, `docker-mailserver` will reject a connection that cannot be secured. Port 25 is [required](https://serverfault.com/questions/623692/is-it-still-wrong-to-require-starttls-on-incoming-smtp-messages) to support insecure connections.
 2. Receives email and filters for spam and viruses. For submitting outgoing mail you should prefer the submission ports(465, 587), which require authentication. Unless a relay host is configured, outgoing email will leave the server via port 25(thus outbound traffic must not be blocked by your provider or firewall).
