@@ -170,8 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#create-your-mail-accounts">Create your mail accounts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generate-dkim-keys">Generate DKIM keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#restart-and-update-the-container">Restart and update the container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spf-forwarding-problems">SPF/Forwarding Problems</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exposed-ports">Exposed ports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spf-forwarding-problems">SPF/Forwarding Problems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#examples-with-just-the-relevant-environmental-variables">Examples with just the relevant environmental variables:</a></li>
 </ul>
 </li>
@@ -295,7 +294,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sizing/sizing.html"><strong>ZiSoft Awareness HW Sizing</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sizing/sizing.html#zisoft-awareness-load-testing"><strong>ZiSoft Awareness Load Testing</strong></a></li>
 </ul>
 
             
@@ -959,59 +957,6 @@ works out of the box: email for <code class="docutils literal notranslate"><span
 <h3>SPF/Forwarding Problems<a class="headerlink" href="#spf-forwarding-problems" title="Permalink to this headline">¶</a></h3>
 <p>If you got any problems with SPF and/or forwarding mails, give <a class="reference external" href="https://github.com/roehling/postsrsd/blob/master/README">SRS</a> a try. You enable SRS by setting <code class="docutils literal notranslate"><span class="pre">ENABLE_SRS=1</span></code>. See the variable description for further information.</p>
 <p><code class="docutils literal notranslate"><span class="pre">restart:</span> <span class="pre">always</span></code> ensures that the mail server container (and Filebeat/ELK containers when using the mail server together with ELK stack) is automatically restarted by Docker in cases like a Docker service or host restart or container exit.</p>
-</div>
-<div class="section" id="exposed-ports">
-<h3>Exposed ports<a class="headerlink" href="#exposed-ports" title="Permalink to this headline">¶</a></h3>
-<p>.. list-table:: Exposed ports
-:widths: 25 25 25 25
-:header-rows: 1</p>
-<ul class="simple">
-<li><ul class="first">
-<li>Protocol</li>
-<li>Opt-in Encryption<sup>1</sup></li>
-<li>Enforced Encryption</li>
-<li>Purpose</li>
-</ul>
-</li>
-<li><ul class="first">
-<li>SMTP, column 1</li>
-<li>25</li>
-<li>N/A</li>
-<li>Transfer<sup>2</sup></li>
-</ul>
-</li>
-<li><ul class="first">
-<li>ESMTP</li>
-<li>587</li>
-<li>465<sup>3</sup></li>
-<li>Submission</li>
-</ul>
-</li>
-<li><ul class="first">
-<li>POP3</li>
-<li>110</li>
-<li>995</li>
-<li>Retrieval</li>
-</ul>
-</li>
-<li><ul class="first">
-<li>IMAP4</li>
-<li>143</li>
-<li>993</li>
-<li>Retrieval</li>
-</ul>
-</li>
-</ul>
-<p>=====  =====  ======
-Inputs     Output</p>
-<hr class="docutils" />
-<p>A      B    A or B
-=====  =====  ======
-False  False  False
-True   False  True
-False  True   True
-True   True   True
-=====  =====  ======</p>
 <ol class="simple">
 <li>A connection <em>may</em> be secured over TLS when both ends support <code class="docutils literal notranslate"><span class="pre">STARTTLS</span></code>. On ports 110, 143 and 587, <code class="docutils literal notranslate"><span class="pre">docker-mailserver</span></code> will reject a connection that cannot be secured. Port 25 is <a class="reference external" href="https://serverfault.com/questions/623692/is-it-still-wrong-to-require-starttls-on-incoming-smtp-messages">required</a> to support insecure connections.</li>
 <li>Receives email and filters for spam and viruses. For submitting outgoing mail you should prefer the submission ports(465, 587), which require authentication. Unless a relay host is configured, outgoing email will leave the server via port 25(thus outbound traffic must not be blocked by your provider or firewall).</li>
