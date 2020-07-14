@@ -1,0 +1,1583 @@
+User Guide
+
+Initial Configuration
+---------------------
+
+Login
+~~~~~
+
+There is no public section in the ZiSoft Security Awareness Application.
+Any user wishing to perform any kind of operation on the system will
+have to login first.
+
+.. figure:: https://gitlab.com/zisoft-public/resources/raw/master/login.png
+   :alt: Zisoft Login
+
+   Zinad Logo
+The system comes with two predefined users
+
+It is extremely important to change the password of your admin user once
+you have installed the application. To do so...
+
+1. login with the default admin username and password,
+2. then go to the “Administrator” drop down on the top bar |Zinad Logo|
+3. navigate to “settings” => users
+4. find the admin user, then click on “Password”
+5. enter the password twice and click "Save".
+6. if successful, you will see a confirmation message
+
+The first thing you need to do after installing the system is to head to
+the “settings” area and add your organization information. This is a
+system-wide information that will be used throughout the application.
+
+To change your settings...
+
+1. navigate to "Administration" => "Settings"
+2. click on “Edit” then set your application URL and Company name. Make
+   sure to include the protocol and the fully qualified domain name in
+   the Host field. This has to be the same URL from which you are
+   serving your awareness application. For example: Host Name should be
+   https://big-company.com/awareness. Example of company name is ”Big
+   Company”.
+3. click save and wait for the confirmation message
+
+Manually Adding Users
+~~~~~~~~~~~~~~~~~~~~~
+
+Zisoft allows you to add users either manually or by importing them from
+a CSV file or by integration with LDAP. To add users manually,
+
+1. navigate to the "Administrator" => "Settings" => "Users" page
+2. Click on "+ User"
+3. Enter the user details and click "Save"
+
+Note that you need to choose the types of newly added user. Users can be
+of one of the following types
+
+-  Administrator: This is a user with full access to the system. This
+   user can create and manage campaigns and other users, send emails,
+   view reports and so on.
+-  Moderator: This is a user with the same authorities as Administrator,
+   However, this user can't see the campaigns created by any
+   Administrator or any other Moderator. Moderators also don't have
+   access to some system settings like LDAP servers or Email server.
+-  User: This is the normal user who can only view lessons and complete
+   exams\*
+
+Resetting a Password for Another User
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As an Administrator, you can reset the password of any other non-admin
+user. To do so...
+
+1. navigate to the users page
+2. click on "password" next to the respective user
+3. set the password twice, then click save
+
+Importing Users from LDAP
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Awareness can import your LDAP users automatically, but you will need to
+configure an LDAP server first. To do so...
+
+1. Navigate to "Administrator" => "Settings" => "LDAP Servers"
+2. Click on "+ LDAP Server"
+3. Enter all the server information
+4. Click "Save"
+
+To set the password of the LDAP server, there is a separate action for
+it
+
+1. Click on "Password" of the respective server
+2. Enter the password
+3. Click save
+
+Once a server is configured, you will need to click on "Import" to pull
+all the users from the LDAP server and create respective users for them
+in the system
+
+Note: Clicking on "Import" does not import users immediately. This
+action spawns a background process called "Job" that will do the actual
+importing. You will see that the number of users on the system starts to
+increase gradually until all users are imported. You can check
+background job status in the "Administrator" => "Settings" =>
+"Background Jobs" page
+
+Also note that any user imported will LDAP will automatically by
+assigned role "User" not "Administrator". An existing administrator will
+need to change a specific user role to "Administrator" if they wish to
+give them that privilege.
+
+Training Campaign
+-----------------
+
+A campaign is like a course or a semester. You start a campaign when you
+have some lessons that you need to distribute to your users. The
+campaign holds information about the lessons, the users, start date, end
+date, exams, and so on.
+
+To create a campaign...
+
+1. Navigate to "Administrator" => "Training" => "Training Campaigns".
+2. Click "+ Campaign"
+3. Enter the campaign information
+4. Click Save
+
+Note that the choice of having an exam in the campaign is final and can
+not be changed once the campaign has been created. This is because
+changing the exam will result in wrong values in the reports because
+some of your users might have already submitted the old exams that you
+have changed. More on exams later
+
+Now, you need to add lessons to the campaign
+
+1. Click on "Lessons" next to the desired campaign
+2. From the menu, select all applicable Lessons
+3. Click Save
+
+Once the campaign has lessons, it is time to add users to it.
+
+1. Click on "Users" next to the desired Campaign
+2. Select all applicable users
+3. Click "Save"
+
+Your campaign is now ready. Any user who signs into the "Awareness"
+system will be able to see that they are required to complete those
+lessons (and possibly an exam if you configured one) in order to pass
+the campaign.
+
+Exams
+~~~~~
+
+An exam is a collection of questions from different lessons. You can
+have an exam with one question from every lesson or an exam with two
+questions from a each lesson related to passwords or any combination of
+questions you like. The questions in the exam has no direct relation
+with the lessons of the training campaigns. This means that it is up to
+you to make sure your exam does not include questions that has not been
+covered in the campaign.
+
+Exams can also be used without any training lessons. For example, you
+may wish to start a training campaign with only an exam and no lessons
+at the beginning of your awareness initiative to measure your employees'
+security awareness and tailor the upcoming training campaigns
+accordingly.
+
+To create a new exam and use it in a campaign...
+
+1. Navigate to "Administrator" => "Training" => "Exams"
+2. Click on "+ Exam"
+3. Enter the name of your Exam
+4. Click "Save"
+
+Now that you created the empty exam, you should be able to add lessons
+to it.
+
+1. Next to the exam that you just created, click on "Lessons"
+2. Click on "+ Lesson" in the sub area
+3. Choose the lessons that you want to add to the Exam
+4. Click "Save"
+
+With the Exam ready, you can now navigate to "Training Campaigns" and
+chose this exam when creating a new campaign.
+
+Note: Exams are final; you can add an exam to a new campaign, but you
+can not change it or remove it from a campaign once it is added.
+
+Custom Lessons, Quizzes and Exams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ZiSoft Awareness comes with a rich set of predefined questions and
+answers, but sometimes you might want to create your own questions. Not
+only that, you can even define a new lesosn altogether, for your
+compliance training for example. To create your own questions in an
+existing lesson...
+
+1. Navigate to "Administrator" => "Training" => "Lesson"
+2. Open the desired lesson, then click on "Questions"
+3. Click no "+ Add Question"
+4. Add your question
+5. Click on save
+6. Then click on "Answers" on the newly created question
+7. Add the desired list of answers, specifiying if it is correct or not
+   for each answer.
+
+To create your own lesson first, click on "+ Lesson" first, name the
+lesson, then follow the same steps above.
+
+Email Server Settings
+---------------------
+
+An email server is used when ever you are sending emails from the
+Awareness system. You can configure one server for every kind of emails
+or a separate server for each kind.
+
+The "Awareness" system sends the following kinds of Emails
+
+-  Training: This is an email you send in the context of a specific
+   training campaign. For example, an email saying "Dear user, you have
+   been invited to a campaign 'Q1'", and so on. More on this later in
+   this guide
+-  Phishing: This is an email you send to your users to verify their
+   vulnerability to phishing emails, something like an attack simulator.
+   More on this later in this guide.
+-  Tips: This is an email you send to your users to advise them on best
+   security practices and behaviors. For example "Make sure to remember
+   to lock your PC before you leave the office". You can send tips
+   everyday, every week, every month, or so on.
+-  General: Any other email you send that is not of the above types is
+   called "general"
+
+To configure a server...
+
+1. navigate to "Administrator" => "Emails" => "Email Servers"
+2. click on "+ Email Server"
+3. add all server information like host, port, and authentication
+   methods
+4. click "Save"
+
+Note that, like any other password in "Awareness", there is a separate
+action for setting this password. To set email password ...
+
+1. click on "Password" next tot the respective email server
+2. enter the password twice
+3. click "Save"
+
+Sending Emails to Campaign Users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Normally, you would need to send a notification email to all users in a
+given campaign to tell them that they have been enrolled in the campaign
+and need to start completing the lessons. To do so, we will use the
+"Email Engine".
+
+"Awareness" system sends a variety of emails. Sending emails is done
+also in campaigns. An email campaign is different from a training
+campaign, but serves the same purpose. It gathers the information needed
+to send an email to a target set of users.
+
+1. Navigate to "Administrator" => "Email" => "Email Campaign"
+2. Click on "+ Email Campaign", enter a name for the email campaign,
+   then click "Save"
+3. Click on "Send" next to the campaign that you just created
+4. From the "context" menu, select "Training"
+5. Find the training campaign that you need to send emails for and click
+   next
+6. Choose the email server and email template that you need to use
+7. You will see a list of "place holders" that appear below the template
+   name. You can use them to override any placeholder manually. Usually,
+   you will need to leave them alone.
+8. Click "Send"
+
+Note: like importing users from LDAP, sending emails is a lengthy
+operation. Imagine sending to ten thousand users. For this reason,
+clicking on "Send" does not actually send the emails. Instead, it
+creates a background process (called Job) that does the actual sending.
+You can check background job status in the "Administrator" => "Settings"
+=> "Job" page
+
+"Awareness" comes bundled with a set of email templates that you can
+use, or you can build your own template adding your own logo and
+signatures and so on. See "Adding Email Templates"
+
+Including Files in Emails
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Admins can add links in the email templates. Links can point to files in
+an external storage on the internet, an internal storage in your
+origanization, or inside the awareness system server itself. See "Adding
+Email Templates" below.
+
+NOTE: ZiSoft does not currently support attaching files inside the
+emails themselves. All files, images, logos, etc., must be included via
+links.
+
+Attending Lessons
+~~~~~~~~~~~~~~~~~
+
+Once you received the campaign notification email, you should be able to
+view the lessons in this campaign by visiting the home page of the
+Awareness System e.g https://awareness.my-company.com/ (or
+https://yourcompany.zisoftonline.com if you have a cloud deployment).
+The home page will list all campaigns that you are added to in
+chronological order.
+
+.. figure:: https://gitlab.com/zisoft-public/resources/raw/master/home.png
+   :alt: Zisoft Home
+
+   Zisoft Home
+Each campaign listing will show how many lessons you have completed and
+how many lessons you have remaining to be completed. If the admin has
+added an exam, you will see the status of the exam and your score if you
+have passed. Click on each lesson to go to the classroom page to attend
+the lesson and complete its quiz.
+
+.. figure:: https://gitlab.com/zisoft-public/resources/raw/master/lesson.png
+   :alt: Zisoft Lesson
+
+   Zisoft Lesson
+If you are a non admin user, this is the only thing you will need to do
+on the awareness system.
+
+Adding Email Templates
+~~~~~~~~~~~~~~~~~~~~~~
+
+1. Navigate to "Administrator" => "Email" => "Templates"
+2. Click on "+ Email Template"
+3. Enter the template name, content, and so on
+4. Choose the context in which this template will be used
+5. Click Save
+
+Emails are sent in contexts. For example, "Training", "Phishing",
+"News", etc. Choosing the right context allows the email engine to
+process template place holders correctly.
+
+Template Placeholders
+~~~~~~~~~~~~~~~~~~~~~
+
+Embedded inside template content, you can find texts similar to
+{first\_name}, {last\_name}, {campaign\_name}, etc. These are called
+"place holders". Placeholders are special texts that get replaced by the
+email engine at the time of sending the email.
+
+For example, if you have a template that reads...
+
+``Dear {last_name}, You have been invited to campaign {campaign_name}``
+
+the end user will receive an email that reads...
+
+``Dear john, You have been invited to campaign "First Quarter Password Awareness"``
+
+The list of available email template place holders is
+
+-  {first\_name}: First name of the receiver
+-  {last\_name}: Last name of the receiver
+-  {username}: Username of the receiver
+-  {link}: The special tracking number used in phishing Emails
+-  {company\_name}: The name of the company configured in the settings
+   section
+-  {email}: Email address of the receiver
+-  {host}: The host address configured in the settings section
+-  {phishpot\_title}: The name of a phishpot campaign
+-  {campaign\_title}: The name of a training campaign
+
+More tags will be added in upcoming releases
+
+Phishing
+--------
+
+Conducting a phishing campaign requires coordination between several
+parts of the application
+
+First, you need to create a container that serves as a record of this
+campaign. This is called the "Phishpot" or the "Phishing Campaign". Each
+phishing campaign designates one "Phishing Page". The phishing page is a
+web page that will be the target of the emails sent to the users. In
+other words, when your users click on the phishing email, this is the
+page they will be taken to. The Awareness system comes pre packaged with
+a set of phishing pages to use, and you can define and use your own if
+you want.
+
+Second, you need to send the email. A phishing email is just a regular
+email sent like any other email, but with one small difference: it
+contains a special tracking code similar to
+"http://coolwebsite.com?link=hdhfey37ehfbf". This link is specific to
+each user and helps the system track which of the users have fallen
+victim for this phishing campaign and which haven't. The Awareness
+system also comes packed with phishing emails that you can use out of
+the box, and you can define your own if you want.
+
+The following section describe how to configure campaigns, emails and
+pages.
+
+Phishing Campaign
+~~~~~~~~~~~~~~~~~
+
+To create a new phishing campaign ...
+
+1. Navigate to "Administrator" => Phishing => Phishing campaigns
+2. Click on "+ Phishing Campaign"
+3. Enter the name of the campaign
+4. Choose the phishing page
+5. Click save
+
+Now that the campaign is created, you need to add users to it
+
+1. Click on "Users" next to the campaign you want
+2. A sub area will open. Click on "+ Add User"
+3. Select the users you want to add to the campaign
+4. Click save
+
+Phishing Email Templates
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Awareness system comes pre-packaged with phishing email templates.
+You can use those templates out of the box. If you you need to define
+your own, you need to create your own phishing email template. To add a
+phishing email template is similar to adding any email template but you
+choose the type of the email to be "Phishing". Within the email body,
+you need to insert a link that directs to "{host}/execute/page/{link}".
+Before sending the email, the engine will replace the two special tags
+{host} and {link} with the host you entered in your settings and the
+special link that is specific to each user as described in "Phishing"
+section above
+
+Phishing Pages
+~~~~~~~~~~~~~~
+
+The system comes pre-packaged with phishing pages. To add a phishing
+page of your own ...
+
+1. Navigate to "Administration" => "Phishing" => "Phishing Pages"
+2. Click on "+ Phishing Page"
+3. Enter the name of the page and the content
+4. Click save
+
+Example "Out of The Box" Phishing Pages
+
+LinkedIn Phishing Page
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: https://gitlab.com/zisoft-public/resources/raw/master/linkedin.png
+   :alt: Zisoft Linkedin
+
+   Zisoft Linkedin
+Office 365 Phishing Page
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: https://gitlab.com/zisoft-public/resources/raw/master/office.png
+   :alt: Zisoft Office
+
+   Zisoft Office
+Sending Phishing Emails
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To send phishing emails, you need to setup some pre-requisites, namely
+"Email Server" and DNS Name.
+
+1. Email Server: You need to setup an email server with an email account
+   that will be used to send the phishing emails. The name of this
+   account should be related to the phishing campaign. For example, if
+   your company is called "Company-Inc" and you are using the "Linked
+   In" phishing campaign, then your should create a user called
+   "linkedin@company-inc.com".
+2. DNS Name: When your users click on the phishing emails in the links,
+   they will be redirected to a phishing page. If this page's name is
+   called "awareness.company-inc.com", the users might be aware they are
+   being tested. Instead, the page should be named something like
+   "linkedin.company-inc.com"
+
+In the Cloud deployment, ZiSoft can provide an account like
+"linkedin@zisoftonline.com" and can provide a DNS like
+"linkedin.zisoftonline.com". If you need more control, you will need to
+setup your own domain name and email server.
+
+When you have the above pre-requisites, you can use the Email Campaign
+tool as described above.
+
+Email Attachments in Phishing Campaigns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This feature allows administrators to add an email attachment in the
+outgoing phishing simulation emails. This is a critical feature that
+enabled Awareness administrators to measure the level of security
+awareness in the organization, and whether or not they can be tricked
+into opening an attachment in a phishing email.
+
+Feature Navigation
+^^^^^^^^^^^^^^^^^^
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administartor]
+    A --> C(Phishing)
+    C --> D(Phishing Campaigns)
+
+Feature Utilization
+^^^^^^^^^^^^^^^^^^^
+
+Set Attachment while Creating/Editing Phishing Campaign
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Click **+ phishing campaign button** |image|
+
+2. Next, fill in the required data to create the phishing campaign
+
+.. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/2.png
+   :alt: image
+
+   image
+You need to take into account the following when filling the Phishing
+campaign details
+
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| **Column in CSV file**   | Interpretation                                                                                                                                                   | Required   |
++==========================+==================================================================================================================================================================+============+
+| Title(English)           | Text label that identifies the campaign in English language                                                                                                      | YES        |
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Title(Arabic)            | Text label that identifies the campaign in Arabic language                                                                                                       | YES        |
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Page                     | A list of templates that can be used to simulate a phishing attack using specific site template                                                                  | YES        |
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Attachment Name          | The name of the attachment that will be added to the outgoing email                                                                                              | NO         |
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Image                    | The actual image file that will be added to the attachment. This field will only be used if an attachment name was defined when creating the phishing campaign   | NO         |
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+
+3. Once saved, the campaign will be saved and can later be edited to
+   change its preferences if required, but please note that when editing
+   an existing phishing campaign that already contain a phishing image
+   file, then the edit screen will contain a preview image that displays
+   the previously uploaded file.
+
+.. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/3.png
+   :alt: image
+
+   image
+Note:- Admin can attach only images with following format to the
+phishing email
+
+::
+
+        •   JPG/JPEG
+        •   PNG
+        •   SVG
+        •   BMP
+
+Send the Phishing Email
+^^^^^^^^^^^^^^^^^^^^^^^
+
+To start the actual email sending of the phishing simulation campaign,
+an Administrator user can follow these steps, provided that they already
+created the phishing campaign.
+
+1. Click on add email campaign button |image|
+2. Fill in the required details, most importantly, you need to set the
+   **Email Server**, **Context** which must be chosen to be Phishing,
+   and the **Phishing Campaign** that was created in step 1. The other
+   options may be used when attempting to create an email campaign for a
+   different context, i.e. Training
+3. After creating the email campaign, a new record will appear in the
+   campaigns list, |image|
+4. You can click (Edit) to change the configurations, or (Delete) to
+   delete the campaign.
+5. Next, you need to define the target users who will be targeted by the
+   phishing campaign.
+
+a. You can stay in the Manual tabbed pane and click (Add user) to select
+   the required users from the list of all users in the Awareness.
+
+.. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/6.png
+   :alt: image
+
+   image
+
+b. Or, you can select in the Query panel then filter the users based on
+   a number of predefined criteria for selection
+
+.. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/7.png
+   :alt: image
+
+   image
+
+6. After selecting the users, you can now click on (Send) button anytime
+   to start the phishing campaign and do the actual email sending.
+
+Background Job
+--------------
+
+Background job is a tool to monitor the queue of submitted Crons jobs by
+the other functions of the system like Periodic Events and Phishing
+Campaigns
+
+-  Background job created when there were running job in the background.
+
+   Ex: importing user from ldap server.
+
+-  It allows admin to monitor the Crons Jobs submitted through other
+   functions of the system like Periodic Events and Phishing Campaigns
+-  Every job added to the queue will have up to 5 attempts, after that
+   the status of the
+
+Feature Navigation
+~~~~~~~~~~~~~~~~~~
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administrator]
+    A --> C(Settings)
+    C --> D(Background JobsS)
+
+Feature Utilization
+~~~~~~~~~~~~~~~~~~~
+
+Notes :
+
+-  Background job created when there were running job in the background.
+
+   Ex: importing user from ldap server.
+
+-  It allows admin to monitor the Crons Jobs submitted through other
+   functions of the system like Periodic Events and Phishing Campaigns
+-  Every job added to the queue will have up to 5 attempts, after that
+   the status of the job will be switched to “Failed”
+
+.. figure:: https://adminguide.s3.amazonaws.com/BackgroundJobs/1.png
+   :alt: image
+
+   image
+Admin can follow up the status of each created job as following
+
+1. In Progress
+2. Running
+3. Canceled
+4. Succeeded (This Status will not appear in the list as the system
+   automatically removes the succeeded jobs)
+
+.. figure:: https://adminguide.s3.amazonaws.com/BackgroundJobs/2.png
+   :alt: image
+
+   image
+Feature Specfics
+~~~~~~~~~~~~~~~~
+
+1. **View The Job Payload**
+
+Admin can view the all details of the selected job by clicking on
+“Payload” button.
+
+.. figure:: https://adminguide.s3.amazonaws.com/BackgroundJobs/3.png
+   :alt: image
+
+   image
+
+2. **Cancel a Crons Job**
+
+admin can delete only the selected failed job by clicking on the delete
+button of the selected job
+
+.. figure:: https://adminguide.s3.amazonaws.com/BackgroundJobs/4.png
+   :alt: image
+
+   image
+Certificate Configuration
+-------------------------
+
+Certificate is an evidence or as written testimony, as of status,
+qualifications, privileges, or the truth of user , in this document we
+will demonstrate how to set certificate configurations and its
+occasions.
+
+Feature Navigation
+~~~~~~~~~~~~~~~~~~
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administrator]
+    A --> C(Training)
+    C --> D(Certificate Configuration)
+
+Feature Utilization
+~~~~~~~~~~~~~~~~~~~
+
+1. Click on "**+ Certificate**\ " to create a new certificate
+   configuration |image|
+2. Now, fill in the required information to create the desired
+   certificate option, taking into consideration that the required
+   inputs are as follows:
+
+-  **Title** (English): An identifier text label in English for the
+   certificate configuration.
+-  **Title** (Arabic): An identifier text label in Arabic
+-  **Context**: The desired certificate context , it can be one of the
+   below contexts
+
+   ::
+
+       Lessons: which will send an email certificate to the every user who watches any video lesson from a selected campaign
+
+       Quizzes: which will send an email certificate to users who complete the lesson quiz for any lesson within a selected campaign
+
+       Campaigns: which will send an email certificate to every user who finish watching all the video lessons in a selected campaign.
+
+       Exams: which will send an email certificate to every user who completes the exam of a selected campaign
+
+-  **Email Template**: Choose from a set of predefined certificate
+   templates. The default certificates contain Arabic and English
+   versions that both contain certificate with Score field (for Exams
+   and Quizzes) and without Score field (for Campaigns and Lessons)
+
+   ::
+
+       To create a new certificate template , check the below "Certificate Template" section
+
+-  **Email Server**: If you have multiple email servers from which
+   emails can be sent from the awareness, then choose the preferred
+   server for sending out the certificates
+-  **Training Campaign**: Allows the selection of the campaign that the
+   certificate context will be applied to.
+
+3. After filling all fields with the desired details, click on **Save**
+   to continue. The list of all certificate configurations will be
+   created.
+
+Feature Specfics
+~~~~~~~~~~~~~~~~
+
+1. **Edit Certificate Configuration**
+
+the admin privileges users can press "**EDIT**\ " to modify any of the
+created certificate configuration.
+
+2. **Delete Certificate Configuration**
+
+the admin privileges users can press "**Delete**\ " to delete any of the
+created certificate configuration.
+
+3. **View Sent Email Certificates**
+
+the admin privileges users can click on the "**Sent**\ " button to view
+a list of all the emails that were actually sent to users as part of the
+certificate configuration.
+
+.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/2.png
+   :alt: image
+
+   image
+After clicking on "**View**\ " button, the email content will appear as
+shown below
+
+.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/3.png
+   :alt: image
+
+   image
+Certificate Template
+~~~~~~~~~~~~~~~~~~~~
+
+You can define the certificate template by adding a new template or by
+modifying an existing one. To do either of the two possible actions, you
+can follow the steps below:
+
+Create a new template
+^^^^^^^^^^^^^^^^^^^^^
+
+To create a new template, you first need to login as user with Admin
+privileges, and then:
+
+1. Navigate
+
+.. code:: mermaid
+
+    graph LR
+    A[Administartor]
+    A --> C(Emails)
+    C --> D(Email Templates)
+
+2. Click on "+ Email Template"button |image|
+
+3. You will need to define the following properties of the template
+
+-  **Title**: An identifier text label for the certificate template used
+   to manually identify the template when needed to be used or modified.
+-  **Content**: The actual content of the email template, its possible
+   to use the **WYSIWYG** editor to create the template with ease.
+
+.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/5.png
+   :alt: image
+
+   image
+
+-  **Subject**: The subject line that will appear in the email header.
+-  **Language**: The language of the email template, which can be used
+   to fill the email template with the data in the preferred language,
+   i.e. English or Arabic name of the Campaign or Quiz.
+-  **Type**: The context for which the template will be used. There are
+   many contexts, as the email templates can be used by many components
+   in the Awareness platform. Therefore its crucial to set the type to
+   “Certificate” , so that the newly created email template can be used
+   in the Certificate Configurations as the next section explains.
+
+Edit an Existing Certificate Template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Only one step differs, which is the add new certificate, since we will
+not add any new certificates. Instead, we will edit an existing one. To
+do this, we need to search for “\ **Certificate**\ ” in the filter text
+box, and then a list of the available certificate templates will appear.
+
+To change an existing certificate, identify the template by its title,
+and then click on “\ **Edit**\ ” to open the template and change its
+content using the same method used to create a new one.
+
+.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/6.png
+   :alt: image
+
+   image
+Certificate Placeholders
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The certificate templates support a collection of placeholders that can
+be used to dynamically replace them with actual data about the user or
+the certificate context that is used. Below a list of the supported
+placeholders, You can easily add them when you create or edit a
+certificate email template. Placeholder Interpretation
+
++--------------------+----------------------------------------------------------+
+| Placeholder        | Interpretation                                           |
++====================+==========================================================+
+| {first\_name}      | User’s first name                                        |
++--------------------+----------------------------------------------------------+
+| {last\_name}       | User’s last name                                         |
++--------------------+----------------------------------------------------------+
+| {cer\_context}     | The certificate context, explained in the next section   |
++--------------------+----------------------------------------------------------+
+| {lesson\_name}     | The associated lesson name (if exist)                    |
++--------------------+----------------------------------------------------------+
+| {campaign\_name}   | User’s first name                                        |
++--------------------+----------------------------------------------------------+
+| {achieve\_date}    | User’s first name                                        |
++--------------------+----------------------------------------------------------+
+| {score}            | User’s first name                                        |
++--------------------+----------------------------------------------------------+
+
+Importing Users Data from CSV file
+----------------------------------
+
+This feature allows administrators to import a list of users and to
+create their accounts on the Awareness platform using a Comma-Separated
+Values file (CSV). Unlike the SSO login, the user data that is imported
+from, the option to import users from a CSV file will initialize the
+profiles for the users, by creating their accounts, with a predefined
+username, email, first name, last name, department, language, and
+possibly will initialize a password for the user as well.
+
+Feature Navigation
+~~~~~~~~~~~~~~~~~~
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administrator]
+    A --> C(Settings)
+    C --> D(Import Users Data CSV )
+
+Feature Utilization
+~~~~~~~~~~~~~~~~~~~
+
+CSV File Fomrat
+~~~~~~~~~~~~~~~
+
+You need to take into consideration that the CSV file format must
+contain the following columns with their respective values
+
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Column in CSV file**   | Interpretation                                                                                                                                                                              |
++==========================+=============================================================================================================================================================================================+
+| Username                 | The desired username for the user                                                                                                                                                           |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| FirstName                | The user's first name                                                                                                                                                                       |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| LastName                 | The user's last name (surname)                                                                                                                                                              |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Email                    | The user's email                                                                                                                                                                            |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Department/English       | The default department of the user in English, will be created if the department doesn’t exist                                                                                              |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Department/Arabic        | The default department of the user in Arabic                                                                                                                                                |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Role                     | The user's default role , could be ("User","Moderator","Administrator")                                                                                                                     |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Hidden                   | Whether the user will appear in the users list of not ("0" will not appear , "1" will appear)                                                                                               |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Status                   | Whether the user will be able to login or not("0" disabled , "1" enabled)                                                                                                                   |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Language                 | The user’s default language, possible values are ("English","Arabic")                                                                                                                       |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Password                 | Optional field, and if set, then will be used to create initial password for the user, but in case the password is defined, then it must be complex and satisfy the security requirements   |
++--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Upload New CSV File
+~~~~~~~~~~~~~~~~~~~
+
+1. Click on Upload File button |image|
+
+-  Next, click (Browse) button and choose the CSV file that contains the
+   required users data, and then click (Save) |image|
+
+2. After selecting the file that contains the required users’ data, the
+   following screen will appear
+
+.. figure:: https://adminguide.s3.amazonaws.com/CSV/3.png
+   :alt: image
+
+   image
+Import Uploaded CSV file
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. For the uploaded CSV file, Admin can click on (Import) button to
+   schedule and run the importing process.
+
+2. At this point, the users in the CSV file will be created, and users
+   can then login normally using the passwords in the CSV file.
+
+User Source
+~~~~~~~~~~~
+
+-  The user imported by CSV will have their source field set to “Inline”
+   means the user data and her/his password are inline and store in the
+   Awareness Application
+-  Admin has the option of “Change password” of Imported users by CSV
+   file from admin panel
+-  User imported by CSV file, has the option of “Forget Password” from
+   login page
+-  User imported by CSV file, has the option of “Change password” from
+   User profile page in the user portal
+
+Feature Specfics
+~~~~~~~~~~~~~~~~
+
+1. **Delete Uploaded CSV File**.
+
+To delete a previously uploaded CSV file, click on the “Delete” button
+next to the CSV entry that needs deletion
+
+.. figure:: https://adminguide.s3.amazonaws.com/CSV/4.png
+   :alt: image
+
+   image
+You will need to confirm the action after you click on Delete
+
+.. figure:: https://adminguide.s3.amazonaws.com/CSV/5.png
+   :alt: image
+
+   image
+Please note that if you already Imported the users from the CSV file,
+then the users will not be deleted when you delete their CSV data
+source.
+
+Importing Users Data from LDAP Server
+-------------------------------------
+
+This feature is a mix between the CSV feature and the SSO with Active
+Directory feature. It allows the administrators to define an LDAP server
+for authentication and import users from it similar to importing the
+users from CSV file, but with an exception; the user profiles will be
+created by querying the LDAP server at import time, but no passwords
+will be set for those users, since the actual passwords that users will
+submit is their original organizational accounts passwords. The
+awareness will then send a server-to-server request to the LDAP server
+to authenticate, but no tokens will be received only an identifier that
+the credentials are valid or not. ### Feature Navigation > Admin
+privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administrator]
+    A --> C(Settings)
+    C --> D(LDAP Servers)
+
+Feature Utilization
+~~~~~~~~~~~~~~~~~~~
+
+1. Click add LDAP server button |image|
+2. Next, fill in the required data to create the LDAP server. The
+   required data contains many fields, but they all are dependent upon
+   the LDAP server settings on the organization side. You need to take
+   into consideration the following interpretations when adding one.
+
++--------------------+-------------------------------------------------------------------------+
+| Field              | Interpretation                                                          |
++====================+=========================================================================+
+| Title              | Identifying text label of the server                                    |
++--------------------+-------------------------------------------------------------------------+
+| Host               | IP address or hostname of the LDAP server                               |
++--------------------+-------------------------------------------------------------------------+
+| Port               | The port number at which the LDAP server works (default 389)            |
++--------------------+-------------------------------------------------------------------------+
+| Bind DN            | The distinguished name of the user who have access to LDAP entries      |
++--------------------+-------------------------------------------------------------------------+
+| Base               | The LDAP server base common name that the user search will start from   |
++--------------------+-------------------------------------------------------------------------+
+| Filter             | A valid LDAP filter query that can be used to filter the users          |
++--------------------+-------------------------------------------------------------------------+
+| Map User Name      | The LDAP attribute that holds the username                              |
++--------------------+-------------------------------------------------------------------------+
+| Map First Name     | The LDAP attribute that holds the first name                            |
++--------------------+-------------------------------------------------------------------------+
+| Map Last Name      | The LDAP attribute that holds the last name                             |
++--------------------+-------------------------------------------------------------------------+
+| Map Email          | The LDAP attribute that holds the email                                 |
++--------------------+-------------------------------------------------------------------------+
+| Map Department     | The LDAP attribute that holds the users deparment                       |
++--------------------+-------------------------------------------------------------------------+
+| Map Group          | The LDAP attribute that holds the user groups                           |
++--------------------+-------------------------------------------------------------------------+
+| Map Group Filter   | An LDAP filter query that can be used to filter the groups              |
++--------------------+-------------------------------------------------------------------------+
+
+3. Once all fields are defined with valid values, click on (Save) button
+   to return to the LDAP Servers list.
+4. Locate the added LDAP server by watching the one with the defined
+   Title field, and the click on Password.
+5. The password is the Bind Password, which the awareness will use to
+   authenticate using it with the Bind DN, so that the Awareness
+   platform can have authenticated access to read the LDAP server
+   entries and import the users.
+
+.. figure:: https://adminguide.s3.amazonaws.com/LDAP/2.png
+   :alt: image
+
+   image
+
+6. After setting the password, click (Bind) to test the configuration.
+   You should see a Success message to indicate the successful
+   integration with the LDAP server.
+
+.. figure:: https://adminguide.s3.amazonaws.com/LDAP/3.png
+   :alt: image
+
+   image
+LDAP Configuration Option
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LDAP can be enabled or disabled by the IT support. If the LDAP is
+disabled, then you cannot perform the following actions:
+
+-  Create LDAP Server
+-  If already created before disabling LDAP, then you cannot import the
+   users
+-  If LDAP users already imported before LDAP was disabled, then all
+   LDAP users will not be able to login to the Awareness platform
+
+LDAP User Source
+~~~~~~~~~~~~~~~~
+
+Users who are imported from an LDAP Server, will have their source set
+to “LDAP”, and this can be noted when navigating to Users screen
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administrator]
+    A --> C(Settings)
+    C --> D(Users)
+
+.. figure:: https://adminguide.s3.amazonaws.com/LDAP/7.png
+   :alt: image
+
+   image
+Feature Specfics
+~~~~~~~~~~~~~~~~
+
+1. **Edit LDAP Server Configuration**
+
+To change the LDAP Server configuration, identify the LDAP server by its
+“Title”, and the click on (Edit)
+
+.. figure:: https://adminguide.s3.amazonaws.com/LDAP/4.png
+   :alt: image
+
+   image
+After that, you should see the same screen as the one you saw when
+creating a new LDAP server.
+
+.. figure:: https://adminguide.s3.amazonaws.com/LDAP/5.png
+   :alt: image
+
+   image
+Change the settings you need, and then click on Save to update the LDAP
+Server configurations
+
+2. **Delete LDAP Server Configuration**
+
+To delete an existing LDAP Server configuration, just click on (Delete)
+button
+
+.. figure:: https://adminguide.s3.amazonaws.com/LDAP/6.png
+   :alt: image
+
+   image
+You will need to confirm the action and only then the LDAP Server will
+be removed, but you need to take into consideration that once you delete
+an existing LDAP Server, all the users who were previously Imported for
+this LDAP Server will no longer have access to the Awareness Platform.
+
+Periodic Events
+---------------
+
+Periodic events allow admin to repeat events with specific types
+(Report, LDAP, Email Campaign) over a specific period of time, at
+specific times (hourly, daily, weekly,)
+
+**Types of Periodic Events**
+
+**LDAP**
+
+-  With this type of periodic events, you can schedule to import users
+   form specific LDAP server.
+
+**Reports**
+
+-  With this type of periodic events, you can schedule to send reports
+   (‘Training Report’, or ‘Phishing Report’) to specific users.
+
+**Email Campaign**
+
+-  With this type of periodic events, you can schedule to send email
+   campaign, for each resource at the required schedule.
+
+Feature Navigation
+~~~~~~~~~~~~~~~~~~
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administartor]
+    A --> C(Settings)
+    C --> D(Periodic Events)
+
+Feature Utilization
+~~~~~~~~~~~~~~~~~~~
+
+1. Press "+ Event" to create a new event
+2. When you create a periodic event, the following inputs are required
+
+   o Title (for all languages of the application).
+
+   o Start date: the requested date for launching the event.
+
+   o End date: the required date for closing the event.
+
+   o Frequency: how often the periodic event should be launched (current
+   options: once, hourly, daily, weekly, monthly, quarterly,
+   semi-annually, annually.
+
+   o Scheduled time: the time of the day required to launch the event.
+
+   o Event type: Report, LDAP, Email Campaign.
+
+   o Event details: either ‘Training report’, or ‘Phishing report’ (only
+   for event types with type: Report)
+
+3. After the periodic event is created, its details will show up:
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/1.png
+   :alt: image
+
+   image
+
+4. Once the start date is due, the status of the periodic event will
+   change to ‘in-progress’, and once the end date is due, the status
+   will change to ‘finished.’
+
+Notes
+
+::
+
+        •   For creating a Periodic Event with type ‘LDAP’, or ‘Email Campaign’, an existing LDAP and email campaign need to be created first.
+
+        •   You can edit the Periodic Event start date, end date, scheduled time, frequencies as long as the start date of a periodic event is not due. When the start date is due, the event has been already dispatched and added to the queue. However, you can cancel the event at any time, and create a new one.
+
+Feature Specfics
+~~~~~~~~~~~~~~~~
+
+1. **Adding Users**
+
+-  In order to add users to Periodic Event, click on the ‘users’ button
+   in the targeted periodic event:
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/2.png
+   :alt: image
+
+   image
+
+-  Then you will find a new menu below, where you can add users
+   manually, or by doing search
+
+|image| |image|
+
+2. **Edit Periodic Event**
+
+To edit a periodic event, click on ‘edit’ on the required resource:
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/5.png
+   :alt: image
+
+   image
+To edit a periodic event, click on ‘edit’ on the required resource:
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/6.png
+   :alt: image
+
+   image
+
+-  After you click edit, a new menu will show below so that you can edit
+   the periodic event:
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/7.png
+   :alt: image
+
+   image
+
+-  You can edit the ‘start date; ‘end date’, ‘frequency’, and all the
+   related periodic event data will be recalculated.
+
+2. **Cancel Periodic Event**
+
+-  To cancel a periodic event, click on ‘cancel’ on the required
+   resource:
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/8.png
+   :alt: image
+
+   image
+
+-  A new popup will show, so that you can confirm to cancel the periodic
+   event:
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/9.png
+   :alt: image
+
+   image
+
+3. **Periodic Event Submitted Background Job**
+
+The queue of the periodic events will be updated in the route
+‘Background jobs’: By clicking on the ‘payload,’ you will receive more
+details about the background job.
+
+.. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/10.png
+   :alt: image
+
+   image
+Reporting
+---------
+
+ZiSoft Awareness uses a very powerful reporting engine called
+`MetaBase <https://www.metabase.com>`__. MetaBase allows you to run very
+specific and customized queries against your ZiSoft Awareness instance.
+For example, you can create a question asking "What is the percentage of
+people who passed campaign 'Q1'" or "What is the progress in the
+percentage of success between last campaign and this campaign". After
+asking your question, you can organize those questions in "Dashboards".
+This dashboard is "Live" meaning that it will find the most recent
+information in the database and present it to you whenever you refresh
+the page. This dashboard can be saved and loaded anytime.
+
+ZiSoft Awareness comes with example dashboards that contain some example
+questions about training campaigns and phishing campaigns. You can
+customize it or you can copy paste from it to build your own campaign.
+If you would like help with that, talk to support@zisoftonline.com.
+
+Viewing Dashboards
+~~~~~~~~~~~~~~~~~~
+
+To view the dashboards...
+
+1. click on your user-name on the top-right corner of the screen
+2. click on Admin Dashboards
+3. Choose the dashboard from the drop down
+4. Add the appropriate parameters to the selected dashboard (e.g. the
+   campaign id or the phishpot id)
+
+Single Sign On (SSO)
+--------------------
+
+This feature enables organizational access to the Awareness Application,
+by allowing them to integrate with a 3rd party authentication servers.
+There are currently three supported options, namely :
+
+-  Office 365,
+-  G-Suite,
+-  Microsoft Active Directory.
+
+Please note that when configuring SSO Option for login to the Awareness
+Application, the users won’t be imported to the awareness at the
+configuration time, but users will be allowed to login without the need
+to pre-create the users, instead users will be created at the users’
+initial login time.
+
+Feature Navigation
+~~~~~~~~~~~~~~~~~~
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administrator]
+    A --> C(Settings)
+    C --> D(Single Sign On)
+
+Feature Utilization
+~~~~~~~~~~~~~~~~~~~
+
+Create a new SSO option
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Click on add option button |image|
+
+2. Now, fill in the required information to create the desired SSO
+   option. There are many options that need to be filled, but some of
+   them are optional and will depend upon the available settings in the
+   actual SSO server that you’ll integrate with. You need to pay
+   attention to the following required fields
+
+   ::
+
+       -   Title: An identifier text label that will appear in the Login page for users when they attempt to login with the configured SSO Option.
+       -   URL: The Url or hostname that the SSO sever operates on
+       -   Client ID: a standard client id field used in server-to-server authentication for fetching users data.
+       -   Username Parameter: The parameter that will be treated as containing the username field from the SSO server response.
+       -   Email Parameter: Similar to the username, but will be used to extract the user’s email from the server response
+       -   Type: The SSO server type, currently available (Active Directory, Office 365, G-Suite)
+       -   Token Parameter: The variable name in the SSO server response that contains the token which holds the users authentication credentials
+       -   Token Exchange URL: the url which the token will be submitted to in order get the authenticated users details
+       -   Access Token Parameter: the variable name which contain the actual user data from the SSO server response
+       -   Access Token Expiry Parameter: The variable that contains the date of token expiry so a new access token would be negotiated.
+       -   Access Refresh Token Parameter: The URL which the expired access token will be submitted to in order to generate and receive a replacement token from the SSO server
+       -   Enable: A setting that defines whether the SSO option is enabled or disabled.
+       -   Deletable: A setting which defines whether or not the SSO option can be deleted after initial creation
+
+3. After filling with the desired details, click Save to continue.
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/2.png
+   :alt: image
+
+   image
+
+4. If deletable is set, then the (Delete) button will appear to allow
+   the delete action to be called.
+
+Feature Specfics
+^^^^^^^^^^^^^^^^
+
+1. **Edit SSO**.
+
+To modify an existing configuration for SSO integration, we can visually
+identify the SSO server that needs modification
+
+Click on "**Edit**\ " button next to the SSO config to change the SSO
+configuration as desired using the same parameter convention as defined
+in “Create SSO Option” step.
+
+|image| |image|
+
+2. **Delete SSO**
+
+If the SSO option is configured to be Deletable, the "**Delete**\ "
+button will appear next to the SSO option title wen navigating to Single
+Sign On screen ,click on the it and then confirm the action.
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/5.png
+   :alt: image
+
+   image
+You should then , receive a Success notification after deleting the SSO
+option
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/6.png
+   :alt: image
+
+   image
+
+3. **Login with SSO option**
+
+To login with the configured SSO option, you should follow these steps:
+
+1. Enter your email address or username, then click Next
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/7.png
+   :alt: image
+
+   image
+
+2. If you login for the first time with the SSO, you will be required to
+   choose the SSO option that you prefer to use
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/8.png
+   :alt: image
+
+   image
+
+3. After choosing the preferred SSO option, you will be redirected to
+   the SSO server login page, where you should enter your organizational
+   credentials, and after that completes, you will be redirected back to
+   the Awareness platform.
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/9.png
+   :alt: image
+
+   image
+
+4. After you return to the awareness, the SSO server will send a special
+   parameter (token) which the awareness will use to exchange some
+   messages with the SSO server, that will in the end allow the
+   awareness to get the username, email, first name, and last name of
+   the user as a minimum so that a profile within the Awareness platform
+   can be initialized.
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/10.png
+   :alt: image
+
+   image
+
+5. The next time you try to login to the Awareness platform using your
+   organizational credentials, you will be moved directly from Step 1 to
+   Step 4, and if your session is saved on the SSO server side, then you
+   may be redirected from Step 1 to Step 5 directly.
+
+Note:-
+
+::
+
+        For user login with SSO option, the “Change Password” tab will not appear in the user profile page, as SSO user cannot change his password from Awareness Application 
+        For user login with SSO option, the “Forgot Password” link will not appear in login page, as SSO user cannot change his password from Awareness Application 
+
+4. **SSO User Source**
+
+5. For the user created using SSO option the source of the user will set
+   to OAuth2, and you can review this by:
+
+    Admin privileges are needed to access this feature
+
+.. code:: mermaid
+
+    graph LR
+    A[Administrator]
+    A --> C(Settings)
+    C --> D(Users)
+
+2. Search the list of users and and locate users with Source as
+   “OAuth2”.
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/12.png
+   :alt: image
+
+   image
+
+3. You can see in the previous screen the sso users don’t have a
+   (Password) button, because the authentication is forwarded to the
+   external SSO server.
+
+Note:-
+
+::
+
+        For user created with SSO option, the “Change Password” button  will not appear, as Admin can change the password of SSO user from Awareness Application 
+        
+
+Force Reset Password / Forgot Password
+--------------------------------------
+
+This function allow admin to force reset the password of certain user,
+hence in the next login of the user, he will not able to use the system
+till she/he changes her/his password. Also, the same function applied
+when clicks on “Forget Password?” link
+
+Feature Utilization
+~~~~~~~~~~~~~~~~~~~
+
+Email Configuration
+^^^^^^^^^^^^^^^^^^^
+
+-  For Admin open email server and make sure email server named “zisoft
+   online email” is added to enable system to send reset password emails
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/1.png
+   :alt: image
+
+   image
+**Force Reset Password**
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Admin can edit the user settings to switch “Force Reset Password” to
+   “True” to force user to change his password in the next login
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/2.png
+   :alt: image
+
+   image
+**Force Reset Password Case condition**
+
+::
+
+        When Admin add new user or update force reset flag tb true for specific user this user will forced to reset password once he logged in to the system
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/3.png
+   :alt: image
+
+   image
+**Forgot Password Case Condition**
+
+-  From user Portal, user clicks on “Forget Password” link in login page
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/4.png
+   :alt: image
+
+   image
+
+-  System directs the user to “Forget Password” page
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/5.png
+   :alt: image
+
+   image
+
+-  User enters her/his email then clicks on “Request” button
+-  User will receive an email contain link to reset password page
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/6.png
+   :alt: image
+
+   image
+
+-  User enters her/his password and Password confirmation
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/7.png
+   :alt: image
+
+   image
+
+-  After saving system will redirect to the login page hence user can
+   use the new password
+
+**View Password Complexity instruction**
+
+User can see password complexity instructions by clicks on the
+information button beside the password field
+
+|image| |image|
+
+.. |Zinad Logo| image:: https://gitlab.com/zisoft-public/resources/raw/master/navigate.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/PhishingAttachment/1.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/PhishingAttachment/4.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/PhishingAttachment/5.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/AddCert.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/4.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/CSV/1.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/CSV/2.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/LDAP/1.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/PeridicEvent/3.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/PeridicEvent/4.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/SSO/1.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/SSO/3.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/SSO/4.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/ResetPassword/8.png
+.. |image| image:: https://adminguide.s3.amazonaws.com/ResetPassword/9.png
