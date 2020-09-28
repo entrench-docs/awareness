@@ -120,8 +120,15 @@
 <p class="caption"><span class="caption-text">Secure NGINX Reverse Proxy</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html">NGINX   TLS 1.2 / 1.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#nginx-reverse-proxy">NGINX Reverse Proxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#nginx-proxy-config-template">NGINX Proxy Config Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#include-etc-letsencrypt-options-ssl-nginx-conf-managed-by-certbot">include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#ssl-dhparam-etc-letsencrypt-ssl-dhparams-pem-managed-by-certbot">ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#more-set-headers-server-omar">more_set_headers ‘Server: omar’;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#location-app-assets">location ~^/app/assets {</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#rewrite-app-assets-http-permanent">rewrite ^/app/assets http:// permanent;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#id1">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#proxy-pass-request-headers-on">proxy_pass_request_headers      on;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#proxy-set-headers-server-my-server">proxy_set_headers    Server: my_server;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureproxy/secureproxy.html#proxy-hide-header-server">proxy_hide_header Server;</a></li>
 </ul>
 
             
