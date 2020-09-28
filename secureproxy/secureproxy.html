@@ -349,30 +349,21 @@ your actual domain name):\
 When NGINX proxies a request, it sends the request to a specified proxied server, fetches the response, and sends it back to the client. It is possible to proxy requests to an HTTP server (another NGINX server or any other server) or a non-HTTP server (which can run an application developed with a specific framework, such as PHP or Python) using a specified protocol. Supported protocols include FastCGI, uwsgi, SCGI, and memcached.
 
 To pass a request to an HTTP proxied server, the proxy_pass directive is specified inside a location. For example:
+</pre></div>
+</div>
+<p>location /some/path/ {<br />proxy_pass http://www.example.com/link/;<br />}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 
-+--------------------------------------------------------------------------+
-| ``` {.ini style=&quot;font-family:monospace;&quot;}                                |
-| location /some/path/ {                                                   |
-|   proxy_pass http://www.example.com/link/;                               |
-|    }                                                                     |
-| ```                                                                      |
-+--------------------------------------------------------------------------+
+<span class="n">This</span> <span class="n">example</span> <span class="n">configuration</span> <span class="n">results</span> <span class="ow">in</span> <span class="n">passing</span> <span class="nb">all</span> <span class="n">requests</span> <span class="n">processed</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">location</span> <span class="n">to</span> <span class="n">the</span> <span class="n">proxied</span> <span class="n">server</span> <span class="n">at</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">address</span><span class="o">.</span> <span class="n">This</span> <span class="n">address</span> <span class="n">can</span> <span class="n">be</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">domain</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">an</span> <span class="n">IP</span> <span class="n">address</span><span class="o">.</span> <span class="n">The</span> <span class="n">address</span> <span class="n">may</span> <span class="n">also</span> <span class="n">include</span> <span class="n">a</span> <span class="n">port</span><span class="p">:</span>
 
+</pre></div>
+</div>
+<p>location  ~ .php {<br />proxy_pass http://127.0.0.1:5001<br />}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 
+<span class="c1"># NGINX Proxy Config Template</span>
 
-This example configuration results in passing all requests processed in this location to the proxied server at the specified address. This address can be specified as a domain name or an IP address. The address may also include a port:
-
-+--------------------------------------------------------------------------+
-| ``` {.ini style=&quot;font-family:monospace;&quot;}                                |
-| location  ~ \.php {                                                      |
-|   proxy_pass http://127.0.0.1:5001                                       |
-|    }                                                                     |
-| ```                                                                      |
-+--------------------------------------------------------------------------+
-
-# NGINX Proxy Config Template
-
-Note: Replace SERVER_NAME with FQDN / URL of server
+<span class="n">Note</span><span class="p">:</span> <span class="n">Replace</span> <span class="n">SERVER_NAME</span> <span class="k">with</span> <span class="n">FQDN</span> <span class="o">/</span> <span class="n">URL</span> <span class="n">of</span> <span class="n">server</span>
 </pre></div>
 </div>
 <p>server {

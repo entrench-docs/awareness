@@ -217,25 +217,24 @@ When NGINX proxies a request, it sends the request to a specified proxied server
 
 To pass a request to an HTTP proxied server, the proxy_pass directive is specified inside a location. For example:
 
-+--------------------------------------------------------------------------+
-| ``` {.ini style="font-family:monospace;"}                                |
-| location /some/path/ {                                                   |
-|   proxy_pass http://www.example.com/link/;                               |
-|    }                                                                     |
-| ```                                                                      |
-+--------------------------------------------------------------------------+
-
+```
+ location /some/path/ {                                                   
+   proxy_pass http://www.example.com/link/;                               
+    }                                                                     
+    
+ ```                                                                      
 
 
 This example configuration results in passing all requests processed in this location to the proxied server at the specified address. This address can be specified as a domain name or an IP address. The address may also include a port:
 
-+--------------------------------------------------------------------------+
-| ``` {.ini style="font-family:monospace;"}                                |
-| location  ~ \.php {                                                      |
-|   proxy_pass http://127.0.0.1:5001                                       |
-|    }                                                                     |
-| ```                                                                      |
-+--------------------------------------------------------------------------+
+
+```
+ location  ~ \.php {                                                      
+   proxy_pass http://127.0.0.1:5001                                       
+    }                                                                     
+    
+ ```                                                                      
+
 
 # NGINX Proxy Config Template
 
