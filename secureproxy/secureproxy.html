@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NGINX TLS 1.2 / 1.3 &mdash; Zisoft Awareness 3.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zisoft Awareness
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Awareness Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Awareness Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html">Initial Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#training-campaign">Training Campaign</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#email-server-settings">Email Server Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#phishing">Phishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#background-job">Background Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#certificate-configuration">Certificate Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#importing-users-data-from-csv-file">Importing Users Data from CSV file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#importing-users-data-from-ldap-server">Importing Users Data from LDAP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#periodic-events">Periodic Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#reporting">Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#single-sign-on-sso">Single Sign On (SSO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin_guide/admin_guide.html#force-reset-password-forgot-password">Force Reset Password / Forgot Password</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Deployment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html">Awareness Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-ha-deployment">Awareness HA Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-offline-deployment">Awareness Offline Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-smtp-server">Awareness SMTP Server</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zisoft Awareness</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>NGINX   TLS 1.2 / 1.3</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/secureproxy/secureproxy.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>Secure NGINX Reverse Proxy</p>
+<div class="section" id="nginx-tls-1-2-1-3">
+<h1>NGINX   TLS 1.2 / 1.3<a class="headerlink" href="#nginx-tls-1-2-1-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-configure-nginx-to-use-tls-1-2-1-3-only">
+<h2>How To Configure Nginx to use TLS 1.2 / 1.3 only<a class="headerlink" href="#how-to-configure-nginx-to-use-tls-1-2-1-3-only" title="Permalink to this headline">¶</a></h2>
+<p>================================================</p>
+<p>How do I enable and configure TLS 1.2 and 1.3 only in Nginx web server?</p>
+<p>TLS is an acronym for Transport Layer Security. It is cryptographic
+protocols designed to provide network communications security. TLS used
+by websites and other apps such as IM (instant messaging), email, web
+browsers, VoIP, and more to secure all communications between their
+server and client. This page explains how to enable and configure Nginx
+to use TLS 1.2 and 1.3 version only.</p>
+<p>Nginx running on Linux/Unix with OpenSSL</p>
+</div>
+<div class="section" id="how-to-configure-and-enable-nginx-to-use-tls-1-2-and-1-3">
+<h2>How to configure and enable Nginx to use TLS 1.2 and 1.3<a class="headerlink" href="#how-to-configure-and-enable-nginx-to-use-tls-1-2-and-1-3" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>Open the terminal application</li>
+<li>Login to Nginx server using the ssh command</li>
+<li>Edit nginx.conf file or virtual domain config file</li>
+<li>Set TLS version by editing <strong>ssl_protocols TLSv1.2;</strong></li>
+<li>For TLS version 1.3 by add <strong>ssl_protocols TLSv1.3;</strong></li>
+<li>We can combine and only allow TLS 1.2 and 1.3 in Nginx by setting:
+<strong>ssl_protocols TLSv1.2 TLSv1.3;</strong></li>
+<li>Save and close the file</li>
+<li>Restart or reload the Nginx server.</li>
+<li>Test it.</li>
+</ol>
+<div class="section" id="a-note-about-our-set-up-for-tls-1-2-or-1-3-only-in-nginx-web-server">
+<h3>A note about our set up for TLS 1.2 or 1.3 only in Nginx web server<a class="headerlink" href="#a-note-about-our-set-up-for-tls-1-2-or-1-3-only-in-nginx-web-server" title="Permalink to this headline">¶</a></h3>
+<p>I tested the server configuration with the following components:</p>
+<ul class="simple">
+<li>Nginx version 1.14.2</li>
+<li>OpenSSL version 1.1.0</li>
+</ul>
+<p>As a result, this config option works the following clients only:</p>
+<ul class="simple">
+<li>Supports Firefox 27+</li>
+<li>Android 4.4.2+</li>
+<li>Chrome 31+</li>
+<li>Edge, IE 11 on Windows 7 or above</li>
+<li>Java 8u31</li>
+<li>OpenSSL 1.0.1</li>
+<li>Opera 20+</li>
+<li>Safari 9+</li>
+</ul>
+<p>In other words, an older client from Windows XP or an older version of
+Android/Java won’t work.</p>
+<div class="section" id="a-note-about-tls-1-3">
+<h4>A note about TLS 1.3<a class="headerlink" href="#a-note-about-tls-1-3" title="Permalink to this headline">¶</a></h4>
+<p>TLS 1.3 only supports Firefox 63+, Android 10.0+, Chrome 70+, Edge 75,
+Java 11, OpenSSL 1.1.1, Opera 57, and Safari 12.1. Hence, I recommend
+enabling both 1.2 and 1.3 support in Nginx.</p>
+</div>
+</div>
+<div class="section" id="how-to-check-nginx-version">
+<h3><a class="reference external" href="https://www.awareness_url.com/faq/unix-linux-bsd-display-nginx-version/">How to check Nginx version</a><a class="headerlink" href="#how-to-check-nginx-version" title="Permalink to this headline">¶</a></h3>
+<p>Type:<br /><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">nginx</span> <span class="pre">-V</span> <span class="pre">$</span> <span class="pre">nginx</span> <span class="pre">-v</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nginx</span> <span class="n">version</span><span class="p">:</span> <span class="n">nginx</span><span class="o">/</span><span class="mf">1.16</span><span class="o">.</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-check-openssl-version">
+<h3>How to check OpenSSL version<a class="headerlink" href="#how-to-check-openssl-version" title="Permalink to this headline">¶</a></h3>
+<p>Run:<br /><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">openssl</span> <span class="pre">version</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OpenSSL</span> <span class="mf">1.1</span><span class="o">.</span><span class="mi">1</span><span class="n">d</span>  <span class="mi">10</span> <span class="n">Sep</span> <span class="mi">2019</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-enable-tls-1-2-only-in-nginx-web-server">
+<h2>How To enable TLS 1.2 only in Nginx web server<a class="headerlink" href="#how-to-enable-tls-1-2-only-in-nginx-web-server" title="Permalink to this headline">¶</a></h2>
+<p>Edit the nginx.conf:<br /><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">vi</span> <span class="pre">/etc/nginx/nginx.conf</span></code><br />OR edit the virtual host:<br /><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">vi</span> <span class="pre">/etc/nginx/vhosts.d/awareness_url.com</span></code><br />Update/append as follows:</p>
+<p>Please note that the TLSv1.1 and TLSv1.2 parameters (1.1.13, 1.0.12)
+work only when OpenSSL 1.0.1 or higher is used. The TLSv1.3 parameter
+(1.13.0) works only when OpenSSL 1.1.1 built with TLSv1.3 support is
+used.</p>
+<p>+————————————————————————–+
+| <code class="docutils literal notranslate"><span class="pre">{.ini</span> <span class="pre">style=&quot;font-family:monospace;&quot;}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">server</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">listen</span> <span class="pre">443</span> <span class="pre">ssl</span> <span class="pre">http2;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">server_name</span> <span class="pre">www.awareness_url.com</span> <span class="pre">awareness_url.com</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">Path</span> <span class="pre">to</span> <span class="pre">certs</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_certificate</span> <span class="pre">/etc/nginx/ssl/awareness_url.com.csr;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_certificate_key</span> <span class="pre">/etc/nginx/ssl/awareness_url.com.key;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_session_timeout</span> <span class="pre">1d;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_session_cache</span> <span class="pre">shared:MySSL:10m;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_session_tickets</span> <span class="pre">off;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_dhparam</span> <span class="pre">/etc/nginx/ssl/awareness_url.com.dhparam.pem;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_protocols</span> <span class="pre">TLSv1.2;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_ciphers</span> <span class="pre">ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA25</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">6:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">DHE-RSA-AES256-GCM-SHA384;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_prefer_server_ciphers</span> <span class="pre">off;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">HSTS</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">add_header</span> <span class="pre">Strict-Transport-Security</span> <span class="pre">&quot;max-age=63072000&quot;</span> <span class="pre">always;</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">OCSP</span> <span class="pre">stapling</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_stapling</span> <span class="pre">on;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_stapling_verify</span> <span class="pre">on;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">verify</span> <span class="pre">chain</span> <span class="pre">of</span> <span class="pre">trust</span> <span class="pre">of</span> <span class="pre">OCSP</span> <span class="pre">response</span> <span class="pre">using</span> <span class="pre">Root</span> <span class="pre">CA</span> <span class="pre">and</span> <span class="pre">Intermedi</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">ate</span> <span class="pre">certs</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_trusted_certificate</span> <span class="pre">/etc/nginx/ssl/fullchain.pem;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">replace</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">IP</span> <span class="pre">address</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">resolver</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">resolver</span> <span class="pre">1.1.1.1;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">##</span> <span class="pre">rest</span> <span class="pre">of</span> <span class="pre">config</span> <span class="pre">##</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span></code>                                                                      |
++————————————————————————–+</p>
+<p>Save and close the file.</p>
+</div>
+<div class="section" id="how-to-enable-tls-1-3-in-nginx">
+<h2>How to Enable TLS 1.3 in Nginx<a class="headerlink" href="#how-to-enable-tls-1-3-in-nginx" title="Permalink to this headline">¶</a></h2>
+<p>For both TLS version 1.2 and 1.3 use the following in nginx config file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">ssl_protocols</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">2</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Just enable TLS version 1.3 in nginx:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">ssl_protocols</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here is sample config for TLS 1.3 only:</p>
+<p>+————————————————————————–+
+| <code class="docutils literal notranslate"><span class="pre">{.ini</span> <span class="pre">style=&quot;font-family:monospace;&quot;}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">server</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">listen</span> <span class="pre">443</span> <span class="pre">ssl</span> <span class="pre">http2;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">listen</span> <span class="pre">[::]:443</span> <span class="pre">ssl</span> <span class="pre">http2;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">server</span> <span class="pre">www.awareness_url.com;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_certificate</span> <span class="pre">/etc/nginx/ssl/fullchain.pem;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_certificate_key</span> <span class="pre">/etc/nginx/ssl/key.pem;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_session_timeout</span> <span class="pre">1d;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_session_cache</span> <span class="pre">shared:SharedNixCraftSSL:10m;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_session_tickets</span> <span class="pre">off;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">TLS</span> <span class="pre">1.3</span> <span class="pre">only</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_protocols</span> <span class="pre">TLSv1.3;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_prefer_server_ciphers</span> <span class="pre">off;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">HSTS</span> <span class="pre">(ngx_http_headers_module</span> <span class="pre">is</span> <span class="pre">required)</span> <span class="pre">(63072000</span> <span class="pre">seconds)</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">add_header</span> <span class="pre">Strict-Transport-Security</span> <span class="pre">&quot;max-age=63072000&quot;</span> <span class="pre">always;</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">OCSP</span> <span class="pre">stapling</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_stapling</span> <span class="pre">on;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_stapling_verify</span> <span class="pre">on;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">verify</span> <span class="pre">chain</span> <span class="pre">of</span> <span class="pre">trust</span> <span class="pre">of</span> <span class="pre">OCSP</span> <span class="pre">response</span> <span class="pre">using</span> <span class="pre">Root</span> <span class="pre">CA</span> <span class="pre">and</span> <span class="pre">Intermedi</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">ate</span> <span class="pre">certs</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">ssl_trusted_certificate</span> <span class="pre">/etc/nginx/ssl/fullchain.pem;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">&nbsp;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">replace</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">IP</span> <span class="pre">address</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">resolver</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">resolver</span> <span class="pre">8.8.8.8;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span></code>                                                                      |
++————————————————————————–+</p>
+<div class="section" id="reload-or-restart-the-nginx">
+<h3>Reload or restart the nginx<a class="headerlink" href="#reload-or-restart-the-nginx" title="Permalink to this headline">¶</a></h3>
+<p>Now that server configured. It is time to test our nginx config server
+for syntax errors:<br /><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">nginx</span> <span class="pre">-t</span></code><br />Sample outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nginx</span><span class="p">:</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span> <span class="n">syntax</span> <span class="ow">is</span> <span class="n">ok</span>
+<span class="n">nginx</span><span class="p">:</span> <span class="n">configuration</span> <span class="n">file</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span> <span class="n">test</span> <span class="ow">is</span> <span class="n">successful</span>
+</pre></div>
+</div>
+<p>Reload or [restart the nginx
+server]</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">nginx</span> <span class="pre">##</span> <span class="pre">OR</span> <span class="pre">##</span> <span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">nginx</span> <span class="pre">restart</span></code></p>
+</div>
+</div>
+<div class="section" id="test-nginx-tls-1-2-support">
+<h2>Test Nginx TLS 1.2 support<a class="headerlink" href="#test-nginx-tls-1-2-support" title="Permalink to this headline">¶</a></h2>
+<p>Run the curl command as follows (replace www.awareness_url.com domain with
+your actual domain name):<br /><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-I</span> <span class="pre">-v</span> <span class="pre">--tlsv1.2</span> <span class="pre">--tls-max</span> <span class="pre">1.2</span> <span class="pre">https://www.awareness_url.com/</span></code></p>
+<div class="section" id="test-nginx-tls-1-3-support">
+<h3>Test Nginx TLS 1.3 support<a class="headerlink" href="#test-nginx-tls-1-3-support" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-I</span> <span class="pre">-v</span> <span class="pre">--tlsv1.3</span> <span class="pre">--tls-max</span> <span class="pre">1.3</span> <span class="pre">https://www.awareness_url.com/</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="nginx-reverse-proxy">
+<h1>NGINX Reverse Proxy<a class="headerlink" href="#nginx-reverse-proxy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="passing-a-request-to-a-proxied-server">
+<h2>Passing a Request to a Proxied Server<a class="headerlink" href="#passing-a-request-to-a-proxied-server" title="Permalink to this headline">¶</a></h2>
+<p>When NGINX proxies a request, it sends the request to a specified proxied server, fetches the response, and sends it back to the client. It is possible to proxy requests to an HTTP server (another NGINX server or any other server) or a non-HTTP server (which can run an application developed with a specific framework, such as PHP or Python) using a specified protocol. Supported protocols include FastCGI, uwsgi, SCGI, and memcached.</p>
+<p>To pass a request to an HTTP proxied server, the proxy_pass directive is specified inside a location. For example:</p>
+<p>+————————————————————————–+
+| <code class="docutils literal notranslate"><span class="pre">{.ini</span> <span class="pre">style=&quot;font-family:monospace;&quot;}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">location</span> <span class="pre">/some/path/</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160; <span class="pre">proxy_pass</span> <span class="pre">http://www.example.com/link/;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span></code>                                                                      |
++————————————————————————–+</p>
+<p>This example configuration results in passing all requests processed in this location to the proxied server at the specified address. This address can be specified as a domain name or an IP address. The address may also include a port:</p>
+<p>+————————————————————————–+
+| <code class="docutils literal notranslate"><span class="pre">{.ini</span> <span class="pre">style=&quot;font-family:monospace;&quot;}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span> <span class="pre">location</span>&#160; <span class="pre">~</span> <span class="pre">\.php</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160; <span class="pre">proxy_pass</span> <span class="pre">http://127.0.0.1:5001</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span></code>                                                                      |
++————————————————————————–+</p>
+</div>
+</div>
+<div class="section" id="nginx-proxy-config-template">
+<h1>NGINX Proxy Config Template<a class="headerlink" href="#nginx-proxy-config-template" title="Permalink to this headline">¶</a></h1>
+<p>Note: Replace SERVER_NAME with FQDN / URL of server</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>server {
+   server_name  SERVER_NAME;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/SERVER_NAME/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/SERVER_NAME/privkey.pem; # managed by Certbot
+#    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+#    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+  server_tokens off;
+# more_set_headers &#39;Server: omar&#39;;
+  proxy_hide_header Server;
+ access_log /var/log/nginx/access.log;
+ error_log /var/log/nginx/error.log;
+ proxy_hide_header X-Powered-By;
+ proxy_buffers 16 64k;
+ proxy_buffer_size 128k;
+ client_max_body_size 4M;
+ gzip on;
+ gzip_disable &quot;msie6&quot;;
+ gzip_vary on;
+ gzip_proxied any;
+ gzip_comp_level 6;
+ gzip_http_version 1.1;
+ gzip_min_length 256;
+ gzip_types
+ text/css
+ text/javascript
+ text/xml
+ text/plain
+ image/bmp
+ image/gif
+ image/jpeg
+ image/jpg
+  image/png
+  image/svg+xml
+  image/x-icon
+  application/javascript
+  application/json
+  application/rss+xml
+  application/vnd.ms-fontobject
+  application/x-font-ttf
+  application/x-javascript
+  application/xml
+  application/xml+rss;
+
+# location ~^/app/assets {
+# rewrite ^/app/assets http:// permanent;
+# }
+
+
+ location / {
+ proxy_hide_header X-Powered-By;
+# proxy_pass_request_headers      on;
+# proxy_set_headers    Server: my_server;
+#  proxy_hide_header Server;
+ proxy_connect_timeout 360s;
+ proxy_send_timeout 360s;
+ proxy_read_timeout 360s;
+ proxy_pass https://127.0.0.1:5001;
+ proxy_set_header Host $host;
+ proxy_set_header X-Forwarded-Host $host;
+ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+ proxy_set_header X-Forwarded-Proto $scheme;
+ proxy_set_header X-Real-IP Secure_IP;
+ proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+ proxy_redirect off;
+ proxy_set_header X-Powered-By: Zisoft_Awarness;
+
+ }
+}
+server {
+    if ($host = SERVER_NAME) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+ listen 80;
+   server_name  SERVER_NAME;
+    return 404; # managed by Certbot
+}
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Entrench
+      <span class="lastupdated">
+        Last updated on 2020-Sep-28.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
