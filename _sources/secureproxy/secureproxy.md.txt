@@ -89,7 +89,7 @@ work only when OpenSSL 1.0.1 or higher is used. The TLSv1.3 parameter
 used.
 
 
-``
+```
  server {                                                                 
      listen 443 ssl http2;                                                
      server_name www.awareness_url.com awareness_url.com   
