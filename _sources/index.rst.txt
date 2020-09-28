@@ -24,7 +24,19 @@ Zisoft Awareness Documentation
    :caption: Deployment
 
    Deployment/deployment
+
+  
+.. toctree::
+   :maxdepth: 2
+   :caption: Sizing
+
+   sizing/sizing
  
+.. toctree::
+   :maxdepth: 2
+   :caption: Secure NGINX Reverse Proxy
+
+   secureproxy/secureproxy  
   
 
 

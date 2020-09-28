@@ -34,7 +34,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="ZiSoft Awareness HW Sizing" href="../sizing/sizing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,6 +112,40 @@
 <li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-ha-deployment">Awareness HA Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-offline-deployment">Awareness Offline Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Deployment/deployment.html#awareness-smtp-server">Awareness SMTP Server</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sizing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sizing/sizing.html"><strong>ZiSoft Awareness HW Sizing</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">Secure NGINX Reverse Proxy</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NGINX   TLS 1.2 / 1.3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-configure-nginx-to-use-tls-1-2-1-3-only">How To Configure Nginx to use TLS 1.2 / 1.3 only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-configure-and-enable-nginx-to-use-tls-1-2-and-1-3">How to configure and enable Nginx to use TLS 1.2 and 1.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-note-about-our-set-up-for-tls-1-2-or-1-3-only-in-nginx-web-server">A note about our set up for TLS 1.2 or 1.3 only in Nginx web server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-note-about-tls-1-3">A note about TLS 1.3</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-check-nginx-version">How to check Nginx version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-check-openssl-version">How to check OpenSSL version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-enable-tls-1-2-only-in-nginx-web-server">How To enable TLS 1.2 only in Nginx web server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-enable-tls-1-3-in-nginx">How to Enable TLS 1.3 in Nginx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reload-or-restart-the-nginx">Reload or restart the nginx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-nginx-tls-1-2-support">Test Nginx TLS 1.2 support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-nginx-tls-1-3-support">Test Nginx TLS 1.3 support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#nginx-reverse-proxy">NGINX Reverse Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#passing-a-request-to-a-proxied-server">Passing a Request to a Proxied Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#nginx-proxy-config-template">NGINX Proxy Config Template</a></li>
 </ul>
 
             
@@ -401,6 +436,13 @@ server {
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../sizing/sizing.html" class="btn btn-neutral float-left" title="ZiSoft Awareness HW Sizing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
