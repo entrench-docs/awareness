@@ -669,13 +669,16 @@ button of the selected job
 Certificate Configuration
 -------------------------
 
-Certificate is an evidence or as written testimony, as of status,
-qualifications, privileges, or the truth of user , in this document we
-will demonstrate how to set certificate configurations and its
-occasions.
+Certificate is an evidence to attend lessons, pass exams. All users can review certificates by display it in website or my received mail. 
+Authorized admin can manage all aspects belong to certificates. This section will demonstrate how to set certificate configurations with its details.
 
 Feature Navigation
 ~~~~~~~~~~~~~~~~~~
+
+.. figure:: https://i.ibb.co/cQVcdFf/1.png
+   :alt: image
+
+   image
 
     Admin privileges are needed to access this feature
 
