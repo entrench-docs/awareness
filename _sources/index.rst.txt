@@ -21,6 +21,12 @@ Zisoft Awareness Documentation
 
 .. toctree::
    :maxdepth: 2
+   :caption: Certificate Configuration
+
+   certifcate/certificate.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: Deployment
 
    Deployment/deployment
