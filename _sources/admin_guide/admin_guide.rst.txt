@@ -793,6 +793,13 @@ Feature Navigation
 -	score (if it exists)
 -	certificate date
 
+.. figure:: https://i.ibb.co/PtrZrW3/8.png
+   :alt: image
+   
+   
+5.  With clicking on download button you will downloaded it if you want.
+
+
 ---------------+----------------------------------------------------------+
 
 Importing Users Data from CSV file
