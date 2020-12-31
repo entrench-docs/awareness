@@ -772,6 +772,24 @@ Certificate Placeholders
 
 The certificate templates support a collection of placeholders that can be used to dynamically replace them with actual data about the user or the certificate context that is used. Below a list of the supported placeholders, you can easily add them when you create or edit a certificate email template. Placeholder Interpretation
 
++--------------------+-------------------------------------------------------------------------+
+| Placeholder        | Interpretation                                                          |
++====================+=========================================================================+
+| {first_name}       | User’s first name                                                       |
++--------------------+-------------------------------------------------------------------------+
+| {last_name}        | User’s last name                                                        |
++--------------------+-------------------------------------------------------------------------+
+| {cer_context}      | The certificate context, explained in the next section                  |
++--------------------+-------------------------------------------------------------------------+
+| {lesson_name}      | The associated lesson name (if exist)                                   |
++--------------------+-------------------------------------------------------------------------+
+| {campaign_name}    | The associated campaign name (if exist)                                 |
++--------------------+-------------------------------------------------------------------------+
+| {achieve_date}     | Achieve date of the certificate                                         |
++--------------------+-------------------------------------------------------------------------+
+| {score}            | Quiz or Exam Score  (if exist)                                          |
++--------------------+-------------------------------------------------------------------------+
+
 User’s Certificate
 ~~~~~~~~~~~~~~~~~~~
  It displays all issued certificates belong to user with its different types.
@@ -796,7 +814,7 @@ Feature Navigation
 .. figure:: https://i.ibb.co/PtrZrW3/8.png
    :alt: image
    
-   
+
 5.  With clicking on download button you will downloaded it if you want.
 
 

@@ -1017,6 +1017,40 @@ To change an existing certificate, identify the template by its title, and then 
 <div class="section" id="certificate-placeholders">
 <h2>Certificate Placeholders<a class="headerlink" href="#certificate-placeholders" title="Permalink to this headline">¶</a></h2>
 <p>The certificate templates support a collection of placeholders that can be used to dynamically replace them with actual data about the user or the certificate context that is used. Below a list of the supported placeholders, you can easily add them when you create or edit a certificate email template. Placeholder Interpretation</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Placeholder</th>
+<th class="head">Interpretation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{first_name}</td>
+<td>User’s first name</td>
+</tr>
+<tr class="row-odd"><td>{last_name}</td>
+<td>User’s last name</td>
+</tr>
+<tr class="row-even"><td>{cer_context}</td>
+<td>The certificate context, explained in the next section</td>
+</tr>
+<tr class="row-odd"><td>{lesson_name}</td>
+<td>The associated lesson name (if exist)</td>
+</tr>
+<tr class="row-even"><td>{campaign_name}</td>
+<td>The associated campaign name (if exist)</td>
+</tr>
+<tr class="row-odd"><td>{achieve_date}</td>
+<td>Achieve date of the certificate</td>
+</tr>
+<tr class="row-even"><td>{score}</td>
+<td>Quiz or Exam Score  (if exist)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="users-certificate">
 <h2>User’s Certificate<a class="headerlink" href="#users-certificate" title="Permalink to this headline">¶</a></h2>
