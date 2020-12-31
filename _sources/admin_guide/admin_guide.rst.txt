@@ -1552,4 +1552,3 @@ information button beside the password field
 .. |image| image:: https://adminguide.s3.amazonaws.com/SSO/3.png
 .. |image| image:: https://adminguide.s3.amazonaws.com/SSO/4.png
 .. |image| image:: https://adminguide.s3.amazonaws.com/ResetPassword/8.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/ResetPassword/9.png
