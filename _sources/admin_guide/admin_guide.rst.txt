@@ -678,7 +678,6 @@ Feature Navigation
 .. figure:: https://i.ibb.co/cQVcdFf/1.png
    :alt: image
 
-   image
 
     Admin privileges are needed to access this feature
 
@@ -689,168 +688,112 @@ Feature Navigation
     A --> C(Training)
     C --> D(Certificate Configuration)
 
-Feature Utilization
+Define new certificate
+~~~~~~~~~~~~~~~~~~~
+1.	Click on “+ Certificate” to create a new certificate configuration
+2.	Now, fill in the required information to create the desired certificate option, taking into consideration that the required inputs are as follows:
+- Title (English): An identifier text label in English for the certificate configuration.
+- Title (Arabic): An identifier text label in Arabic
+- Context: The desired certificate context, it can be one of the below contexts
+	 Lessons: which will send an email certificate to every user who watches any video lesson from a selected campaign
+	Quizzes: which will send an email certificate to users who complete the lesson quiz for any lesson within a selected campaign
+	Campaigns: which will send an email certificate to every user who finish watching all the video lessons in a selected campaign.
+	Exams: which will send an email certificate to every user who completes the exam of a selected campaign.
+- Certificate Template - English: Choose from a set of predefined certificate templates. The default certificates contain English versions that contain certificate with Score field (for Exams and Quizzes) and without Score field (for Campaigns and Lessons)
+	 To create a new certificate template, check the below "Certificate Template - English" section
+- Certificate Template - Arabic: Choose from a set of predefined certificate templates. The default certificates contain Arabic versions that contain certificate with Score field (for Exams and Quizzes) and without Score field (for Campaigns and Lessons)
+	 To create a new certificate template, check the below "Certificate Template - Arabic" section
+- Notification Email Template - English: Choose from a set of predefined notification templates. The default certificates contain English versions.
+	To create a new notification template, check the below "Notification Email Template - English" section
+- Notification Email Template - Arabic: Choose from a set of predefined notification templates. The default certificates contain Arabic versions.
+	 To create a new notification template, check the below " Notification Email Template - Arabic" section
+- Email Server: If you have multiple email servers from which emails can be sent from the awareness, then choose the preferred server for sending out the certificates
+  Training Campaign: Allows the selection of the campaign that the certificate context will be applied to.
+
+3.  After filling all fields with the desired details, click on Save to continue. The list of all certificate configurations will be created.
+
+Certificate options
+~~~~~~~~~~~~~~~~~~~
+1. Edit Certificate Configuration Authorized admin can press “EDIT” to modify any of the created certificate configuration.
+
+2. Delete Certificate Configuration Authorized admin can press “Delete” to delete any of the created certificate configuration.
+
+3. View Sent Email Certificates Authorized admin can click on the “Sent” button to view a list of all the emails that actually sent to users as part of the certificate configuration.
+
+.. figure:: https://i.ibb.co/VSXHJN7/2.png
+   :alt: image
+   
+
+After clicking on “View” button, the email content will appear as shown below
+
+.. figure:: https://i.ibb.co/4JMScdN/3.png
+   :alt: image
+
+
+Certificate Template
 ~~~~~~~~~~~~~~~~~~~
 
-1. Click on "**+ Certificate**\ " to create a new certificate
-   configuration |image|
-2. Now, fill in the required information to create the desired
-   certificate option, taking into consideration that the required
-   inputs are as follows:
+You can define the certificate template by adding a new template or by modifying an existing one. To do either of the two possible actions, you can follow the steps below:
+Create a new template Authorized admin can create new template by following steps:
 
--  **Title** (English): An identifier text label in English for the
-   certificate configuration.
--  **Title** (Arabic): An identifier text label in Arabic
--  **Context**: The desired certificate context , it can be one of the
-   below contexts
+1.	After successful login as admin
+2.	From menu bar, select Admin panel icon > Email Management > Email Templates
 
-   ::
-
-       Lessons: which will send an email certificate to the every user who watches any video lesson from a selected campaign
-
-       Quizzes: which will send an email certificate to users who complete the lesson quiz for any lesson within a selected campaign
-
-       Campaigns: which will send an email certificate to every user who finish watching all the video lessons in a selected campaign.
-
-       Exams: which will send an email certificate to every user who completes the exam of a selected campaign
-
--  **Email Template**: Choose from a set of predefined certificate
-   templates. The default certificates contain Arabic and English
-   versions that both contain certificate with Score field (for Exams
-   and Quizzes) and without Score field (for Campaigns and Lessons)
-
-   ::
-
-       To create a new certificate template , check the below "Certificate Template" section
-
--  **Email Server**: If you have multiple email servers from which
-   emails can be sent from the awareness, then choose the preferred
-   server for sending out the certificates
--  **Training Campaign**: Allows the selection of the campaign that the
-   certificate context will be applied to.
-
-3. After filling all fields with the desired details, click on **Save**
-   to continue. The list of all certificate configurations will be
-   created.
-
-Feature Specfics
-~~~~~~~~~~~~~~~~
-
-1. **Edit Certificate Configuration**
-
-the admin privileges users can press "**EDIT**\ " to modify any of the
-created certificate configuration.
-
-2. **Delete Certificate Configuration**
-
-the admin privileges users can press "**Delete**\ " to delete any of the
-created certificate configuration.
-
-3. **View Sent Email Certificates**
-
-the admin privileges users can click on the "**Sent**\ " button to view
-a list of all the emails that were actually sent to users as part of the
-certificate configuration.
-
-.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/2.png
+.. figure:: https://i.ibb.co/W5SvVtb/4.png
    :alt: image
 
-   image
-After clicking on "**View**\ " button, the email content will appear as
-shown below
 
-.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/3.png
+3.	Click on “+ Email Template” button
+4.	You will need to define the following properties of the template
+
+- Title: An identifier text label for the certificate template used to manually identify the template when needed to be used or modified.
+- Content: The actual content of the email template, it’s possible to use the WYSIWYG editor to create the template with ease.
+
+.. figure:: https://i.ibb.co/PCxnZDs/5.png
    :alt: image
 
-   image
-Certificate Template
-~~~~~~~~~~~~~~~~~~~~
 
-You can define the certificate template by adding a new template or by
-modifying an existing one. To do either of the two possible actions, you
-can follow the steps below:
+- Subject: The subject line that will appear in the email header.
+- Language: The language of the email template, which can be used to fill the email template with the data in the preferred language, i.e. English or Arabic name of the Campaign or Quiz.
+- Type: The context for which the template will be used. There are many contexts, as the email templates can be used by many components in the Awareness platform. Therefore, its crucial to set the type to “Certificate” for “certificate email template” and “Certificate Notification” for “Notification email template”, so that the newly created email template can be used in the Certificate Configurations as the next section explains.
 
-Create a new template
-^^^^^^^^^^^^^^^^^^^^^
 
-To create a new template, you first need to login as user with Admin
-privileges, and then:
+Edit an Existing Certificate and Notification Template
+~~~~~~~~~~~~~~~~~~~
+For edit an existing certificate, It’s required to search for “Certificate” in the filter text box, and then a list of all available certificates templates will be appear.
+To change an existing certificate, identify the template by its title, and then click on “Edit” to open the template and change its content using the same method used to create a new one.
 
-1. Navigate
-
-.. code:: mermaid
-
-    graph LR
-    A[Administartor]
-    A --> C(Emails)
-    C --> D(Email Templates)
-
-2. Click on "+ Email Template"button |image|
-
-3. You will need to define the following properties of the template
-
--  **Title**: An identifier text label for the certificate template used
-   to manually identify the template when needed to be used or modified.
--  **Content**: The actual content of the email template, its possible
-   to use the **WYSIWYG** editor to create the template with ease.
-
-.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/5.png
+.. figure:: https://i.ibb.co/8YLVcp8/6.png
    :alt: image
 
-   image
 
--  **Subject**: The subject line that will appear in the email header.
--  **Language**: The language of the email template, which can be used
-   to fill the email template with the data in the preferred language,
-   i.e. English or Arabic name of the Campaign or Quiz.
--  **Type**: The context for which the template will be used. There are
-   many contexts, as the email templates can be used by many components
-   in the Awareness platform. Therefore its crucial to set the type to
-   “Certificate” , so that the newly created email template can be used
-   in the Certificate Configurations as the next section explains.
-
-Edit an Existing Certificate Template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Only one step differs, which is the add new certificate, since we will
-not add any new certificates. Instead, we will edit an existing one. To
-do this, we need to search for “\ **Certificate**\ ” in the filter text
-box, and then a list of the available certificate templates will appear.
-
-To change an existing certificate, identify the template by its title,
-and then click on “\ **Edit**\ ” to open the template and change its
-content using the same method used to create a new one.
-
-.. figure:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/6.png
-   :alt: image
-
-   image
 Certificate Placeholders
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
-The certificate templates support a collection of placeholders that can
-be used to dynamically replace them with actual data about the user or
-the certificate context that is used. Below a list of the supported
-placeholders, You can easily add them when you create or edit a
-certificate email template. Placeholder Interpretation
+The certificate templates support a collection of placeholders that can be used to dynamically replace them with actual data about the user or the certificate context that is used. Below a list of the supported placeholders, you can easily add them when you create or edit a certificate email template. Placeholder Interpretation
 
-+--------------------+----------------------------------------------------------+
-| Placeholder        | Interpretation                                           |
-+====================+==========================================================+
-| {first\_name}      | User’s first name                                        |
-+--------------------+----------------------------------------------------------+
-| {last\_name}       | User’s last name                                         |
-+--------------------+----------------------------------------------------------+
-| {cer\_context}     | The certificate context, explained in the next section   |
-+--------------------+----------------------------------------------------------+
-| {lesson\_name}     | The associated lesson name (if exist)                    |
-+--------------------+----------------------------------------------------------+
-| {campaign\_name}   | User’s first name                                        |
-+--------------------+----------------------------------------------------------+
-| {achieve\_date}    | User’s first name                                        |
-+--------------------+----------------------------------------------------------+
-| {score}            | User’s first name                                        |
-+--------------------+----------------------------------------------------------+
+User’s Certificate
+~~~~~~~~~~~~~~~~~~~
+ It displays all issued certificates belong to user with its different types.
+Feature Navigation
+
+.. figure:: https://i.ibb.co/nLcXLcC/7.png
+   :alt: image
+
+
+
+1.	User privileges are needed to access this feature.
+2.	Navigate to “My certificates”
+3.	all certificate will be displayed in page “My Certificates”
+4.	Click on view button that is show the certificate details,
+-	certificate template
+-	user name
+-	lesson name
+-	campaign name
+-	score (if it exists)
+-	certificate date
+
+---------------+----------------------------------------------------------+
 
 Importing Users Data from CSV file
 ----------------------------------
