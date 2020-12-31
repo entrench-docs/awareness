@@ -790,6 +790,7 @@ The certificate templates support a collection of placeholders that can be used 
 | {score}            | Quiz or Exam Score  (if exist)                                          |
 +--------------------+-------------------------------------------------------------------------+
 
+
 User’s Certificate
 ~~~~~~~~~~~~~~~~~~~
  It displays all issued certificates belong to user with its different types.
