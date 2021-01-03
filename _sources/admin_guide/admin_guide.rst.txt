@@ -502,7 +502,10 @@ Feature Utilization
 Set Attachment while Creating/Editing Phishing Campaign
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Click **+ phishing campaign button** |image|
+1. Click **+ phishing campaign button** 
+
+.. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/1.png
+   :alt: image
 
 2. Next, fill in the required data to create the phishing campaign
 
@@ -552,14 +555,18 @@ To start the actual email sending of the phishing simulation campaign,
 an Administrator user can follow these steps, provided that they already
 created the phishing campaign.
 
-1. Click on add email campaign button |image|
+1. Click on add email campaign button |image2|
 2. Fill in the required details, most importantly, you need to set the
    **Email Server**, **Context** which must be chosen to be Phishing,
    and the **Phishing Campaign** that was created in step 1. The other
    options may be used when attempting to create an email campaign for a
    different context, i.e. Training
 3. After creating the email campaign, a new record will appear in the
-   campaigns list, |image|
+   campaigns list,
+
+.. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/5.png
+   :alt: image
+   
 4. You can click (Edit) to change the configurations, or (Delete) to
    delete the campaign.
 5. Next, you need to define the target users who will be targeted by the
@@ -878,10 +885,20 @@ contain the following columns with their respective values
 Upload New CSV File
 ~~~~~~~~~~~~~~~~~~~
 
-1. Click on Upload File button |image|
+1. Click on Upload File button 
+
+
+
+.. figure:: https://adminguide.s3.amazonaws.com/CSV/1.png
+   :alt: image
+
 
 -  Next, click (Browse) button and choose the CSV file that contains the
-   required users data, and then click (Save) |image|
+   required users data, and then click (Save) .
+
+
+.. figure:: https://adminguide.s3.amazonaws.com/CSV/2.png
+   :alt: image
 
 2. After selecting the file that contains the required users’ data, the
    following screen will appear
@@ -889,7 +906,7 @@ Upload New CSV File
 .. figure:: https://adminguide.s3.amazonaws.com/CSV/3.png
    :alt: image
 
-   image
+
 Import Uploaded CSV file
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -959,7 +976,10 @@ privileges are needed to access this feature
 Feature Utilization
 ~~~~~~~~~~~~~~~~~~~
 
-1. Click add LDAP server button |image|
+1. Click add LDAP server button 
+
+.. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/5.png
+   :alt: image
 2. Next, fill in the required data to create the LDAP server. The
    required data contains many fields, but they all are dependent upon
    the LDAP server settings on the organization side. You need to take
@@ -1178,7 +1198,9 @@ Feature Specfics
 -  Then you will find a new menu below, where you can add users
    manually, or by doing search
 
-|image| |image|
+
+.. figure:: https://adminguide.s3.amazonaws.com/LDAP/1.png
+   :alt: image
 
 2. **Edit Periodic Event**
 
@@ -1299,7 +1321,14 @@ Feature Utilization
 Create a new SSO option
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Click on add option button |image|
+1. Click on add option button  
+
+
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/1.png
+
+   :alt: image
+
 
 2. Now, fill in the required information to create the desired SSO
    option. There are many options that need to be filled, but some of
@@ -1345,7 +1374,10 @@ Click on "**Edit**\ " button next to the SSO config to change the SSO
 configuration as desired using the same parameter convention as defined
 in “Create SSO Option” step.
 
-|image| |image|
+https://adminguide.s3.amazonaws.com/SSO/3.png
+
+
+https://adminguide.s3.amazonaws.com/SSO/4.png
 
 2. **Delete SSO**
 
@@ -1530,3 +1562,9 @@ Email Configuration
 
 User can see password complexity instructions by clicks on the
 information button beside the password field
+
+https://adminguide.s3.amazonaws.com/ResetPassword/8.png
+
+
+.. figure:: https://adminguide.s3.amazonaws.com/ResetPassword/8.png
+   :alt: image
