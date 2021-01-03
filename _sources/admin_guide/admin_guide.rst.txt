@@ -509,7 +509,6 @@ Set Attachment while Creating/Editing Phishing Campaign
 .. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/2.png
    :alt: image
 
-   image
 You need to take into account the following when filling the Phishing
 campaign details
 
@@ -536,7 +535,6 @@ campaign details
 .. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/3.png
    :alt: image
 
-   image
 Note:- Admin can attach only images with following format to the
 phishing email
 
@@ -573,7 +571,6 @@ a. You can stay in the Manual tabbed pane and click (Add user) to select
 .. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/6.png
    :alt: image
 
-   image
 
 b. Or, you can select in the Query panel then filter the users based on
    a number of predefined criteria for selection
@@ -581,7 +578,6 @@ b. Or, you can select in the Query panel then filter the users based on
 .. figure:: https://adminguide.s3.amazonaws.com/PhishingAttachment/7.png
    :alt: image
 
-   image
 
 6. After selecting the users, you can now click on (Send) button anytime
    to start the phishing campaign and do the actual email sending.
@@ -1534,21 +1530,3 @@ Email Configuration
 
 User can see password complexity instructions by clicks on the
 information button beside the password field
-
-|image| |image|
-
-.. |Zinad Logo| image:: https://gitlab.com/zisoft-public/resources/raw/master/navigate.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/PhishingAttachment/1.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/PhishingAttachment/4.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/PhishingAttachment/5.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/AddCert.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/CertificateConfiguration/4.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/CSV/1.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/CSV/2.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/LDAP/1.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/PeridicEvent/3.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/PeridicEvent/4.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/SSO/1.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/SSO/3.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/SSO/4.png
-.. |image| image:: https://adminguide.s3.amazonaws.com/ResetPassword/8.png
