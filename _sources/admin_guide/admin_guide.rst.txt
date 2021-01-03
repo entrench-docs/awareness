@@ -1244,7 +1244,6 @@ To edit a periodic event, click on ‘edit’ on the required resource:
 .. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/9.png
    :alt: image
 
-   image
 
 3. **Periodic Event Submitted Background Job**
 
@@ -1255,7 +1254,6 @@ details about the background job.
 .. figure:: https://adminguide.s3.amazonaws.com/PeridicEvent/10.png
    :alt: image
 
-   image
 Reporting
 ---------
 
@@ -1374,10 +1372,14 @@ Click on "**Edit**\ " button next to the SSO config to change the SSO
 configuration as desired using the same parameter convention as defined
 in “Create SSO Option” step.
 
-https://adminguide.s3.amazonaws.com/SSO/3.png
 
 
-https://adminguide.s3.amazonaws.com/SSO/4.png
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/3.png
+   :alt: image
+
+.. figure:: https://adminguide.s3.amazonaws.com/SSO/4.png
+   :alt: image
+
 
 2. **Delete SSO**
 
